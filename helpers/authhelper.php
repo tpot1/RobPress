@@ -35,17 +35,10 @@
 			$f3=Base::instance();						
 			$db = $this->controller->db;
             
-            /*$stmt = $db->pdo->prepare('SELECT * FROM users WHERE username= :username AND password= :password');
-
-            $results = $stmt->execute(array('username' => $username, 'password' => $password));*/
+            $query = 'SELECT * FROM users WHERE username= :username AND password= :password';
+            $args = array(':username' => $username, ':password' => $password);
             
-            $stmt = $db->pdo->prepare('SELECT * FROM users WHERE username= :username AND password= :password');
-            $stmt->bindParam(':username', $username, PDO::PARAM_STR);
-            $stmt->bindParam(':password', $password, PDO::PARAM_STR);
-
-            $stmt->execute();
-
-            $results = $stmt->fetchAll();
+            $results = $db->query($query, $args);
 
 			if (!empty($results)) {
 				$user = $results[0];	
