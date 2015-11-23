@@ -3,6 +3,8 @@
 class Database {
 	
 	public $connection;
+    
+    public $pdo;
 
 	/** Create a new database object */
 	public function __construct() {
@@ -10,6 +12,12 @@ class Database {
 		
 		extract($f3->get('db'));
 		$this->connection=new DB\SQL(
+		    'mysql:host='.$server.';port=3306;dbname='.$name,
+		    $username,
+		    $password
+		);
+        
+        $this->pdo=new PDO(
 		    'mysql:host='.$server.';port=3306;dbname='.$name,
 		    $username,
 		    $password

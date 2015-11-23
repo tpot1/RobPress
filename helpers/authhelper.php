@@ -34,8 +34,20 @@
 		public function login($username,$password) {
 			$f3=Base::instance();						
 			$db = $this->controller->db;
-			$results = $db->query("SELECT * FROM `users` WHERE `username`='$username' AND `password`='$password'");
-			if (!empty($results)) {		
+            
+            /*$stmt = $db->pdo->prepare('SELECT * FROM users WHERE username= :username AND password= :password');
+
+            $results = $stmt->execute(array('username' => $username, 'password' => $password));*/
+            
+            $stmt = $db->pdo->prepare('SELECT * FROM users WHERE username= :username AND password= :password');
+            $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+            $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+
+            $stmt->execute();
+
+            $results = $stmt->fetchAll();
+
+			if (!empty($results)) {
 				$user = $results[0];	
 				$this->setupSession($user);
 				return $this->forceLogin($user);
