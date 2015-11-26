@@ -6,6 +6,8 @@ class Contact extends Controller {
 		if($this->request->is('post')) {
 			extract($this->request->data);
 			$from = "From: $from";
+			
+			$to = $this->Model->Settings->getSetting('email');	//defining who the request is sent to here rather than in the html, where it could be edited
 
 			mail($to,$subject,$message,$from);
 

@@ -11,6 +11,12 @@ class Blog extends Controller {
 		} else {
 			$posts = $this->Model->Posts->fetchPublished();
 		}
+		
+		foreach($posts as $post){
+			$post['title'] = htmlspecialchars($post['title']);
+			$post['summary'] = htmlspecialchars($post['summary']);
+			$post['content'] = htmlspecialchars($post['content']);
+		}
 
 		$blogs = $this->Model->map($posts,'user_id','Users');
 		$blogs = $this->Model->map($posts,array('post_id','Post_Categories','category_id'),'Categories',false,$blogs);
@@ -114,10 +120,9 @@ class Blog extends Controller {
             
             $ids = $this->db->connection->exec($query, $args);
             
-			//$ids = $this->db->connection->exec("SELECT id FROM `posts` WHERE `title` LIKE \"%$search%\" OR `content` LIKE '%$search%'");
 			$ids = Hash::extract($ids,'{n}.id');
 			if(empty($ids)) {
-				StatusMessage::add('No search results found for ' . $search); 
+				StatusMessage::add('No search results found for ' . htmlspecialchars($search)); //used htmlspecialchars() to convert any special characters to strings in the input, preventing XSS
 				return $f3->reroute('/blog/search');
 			}
 
@@ -131,4 +136,5 @@ class Blog extends Controller {
 		}
 	}
 }
+
 ?>
