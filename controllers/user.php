@@ -12,6 +12,26 @@ class User extends Controller {
 		$f3->set('articles',$articles);
 		$f3->set('comments',$comments);
 	}
+	
+	public function credentialCheck($username, $displayname, $password){
+		if($username != htmlspecialchars($username)){
+			StatusMessage::add('Invalid characters in username', 'danger');
+			return false;
+		}
+		else if($displayname != htmlspecialchars($displayname)){
+			StatusMessage::add('Invalid characters in displayname', 'danger');
+			return false;
+		}
+		else if($username == ""){
+			StatusMessage::add("Username can't be empty.",'danger');
+			return false;
+		}
+		else if($password == ""){
+			StatusMessage::add("Password can't be empty.",'danger');
+			return false;
+		}
+		else return true;
+	}
 
 	public function add($f3) {
 		if($this->request->is('post')) {
@@ -21,13 +41,14 @@ class User extends Controller {
 				StatusMessage::add('User already exists','danger');
 			} else if($password != $password2) {
 				StatusMessage::add('Passwords must match','danger');
-			} else {
+			} else if($this->credentialCheck($username, $displayname, $password)){
 				$user = $this->Model->Users;
 				$user->copyfrom('POST');
 				$user->created = mydate();
 				$user->bio = '';
 				$user->level = 1;
 				$user->setPassword($password);
+				$user->setUsername($username);
 				if(empty($displayname)) {
 					$user->displayname = $user->username;
 				}
@@ -69,7 +90,7 @@ class User extends Controller {
 				StatusMessage::add('Logged in succesfully','success');
 
 				//Redirect to where they came from
-				if(isset($_GET['from'])) {
+				if(isset($_GET['from'])) {				//TODO**********************VULNERABILITY HERE********************
 					$f3->reroute($_GET['from']);
 				} else {
 					$f3->reroute('/');	
@@ -92,7 +113,7 @@ class User extends Controller {
 
 			//Handle avatar upload
 			if(isset($_FILES['avatar']) && isset($_FILES['avatar']['tmp_name']) && !empty($_FILES['avatar']['tmp_name'])) {
-				$url = File::Upload($_FILES['avatar']);
+				$url = File::Upload($_FILES['avatar']);		//TODO ************************VULNERABILITY HERE********************
 				$u->avatar = $url;
 			} else if(isset($reset)) {
 				$u->avatar = '';

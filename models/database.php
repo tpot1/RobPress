@@ -3,8 +3,6 @@
 class Database {
 	
 	public $connection;
-    
-    public $pdo;
 
 	/** Create a new database object */
 	public function __construct() {
@@ -16,16 +14,10 @@ class Database {
 		    $username,
 		    $password
 		);
-        
-        $this->pdo=new PDO(
-		    'mysql:host='.$server.';port=3306;dbname='.$name,
-		    $username,
-		    $password
-		);
 	}
 
 	/** Perform a direct database query */
-	public function query($sql, $argsArr) {
+	public function query($sql, $argsArr) {		//added argsArr so exec() could validate the args before executing
 		$result = $this->connection->exec($sql, $argsArr);
 		return $result;
 	}

@@ -12,13 +12,13 @@ class Blog extends Controller {
 			$posts = $this->Model->Posts->fetchPublished();
 		}
 		
-		foreach($posts as $post){
+		foreach($posts as $post){		//this only fixed it on the home page
 			$post['title'] = htmlspecialchars($post['title']);
 			$post['summary'] = htmlspecialchars($post['summary']);
 			$post['content'] = htmlspecialchars($post['content']);
 		}
 
-		$blogs = $this->Model->map($posts,'user_id','Users');
+		$blogs = $this->Model->map($posts,'user_id','Users');		
 		$blogs = $this->Model->map($posts,array('post_id','Post_Categories','category_id'),'Categories',false,$blogs);
 		$f3->set('blogs',$blogs);
 	}

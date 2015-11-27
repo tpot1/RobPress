@@ -61,9 +61,9 @@ class Controller {
 		if(stripos($f3->get('PARAMS.0'),'admin') !== false) { $admin = true; }
 
 		//Identify action
-		$controller = get_class($this);
-		if($f3->exists('PARAMS.action')) {
-			$action = $f3->get('PARAMS.action');	
+		$controller = get_class($this);	
+		if($f3->exists('PARAMS.action')) {		
+			$action = $f3->get('PARAMS.action');	//TODO ****************POSSIBLE VULNERABILITY HERE*******************************
 		} else {
 			$action = 'index';
 		}
