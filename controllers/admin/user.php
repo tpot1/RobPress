@@ -11,13 +11,21 @@ class User extends AdminController {
 
 	public function edit($f3) {	
 		$id = $f3->get('PARAMS.3');
+		if(empty($id)) {
+			return $f3->reroute('/admin/user');
+		}
 		$u = $this->Model->Users->fetch($id);
+		if(empty($u['username'])) {
+			return $f3->reroute('/admin/user');
+		}
 		if($this->request->is('post')) {
 			$u->copyfrom('POST');
 			$u->setPassword($this->request->data['password']);
-			$u->save();
-			\StatusMessage::add('User updated succesfully','success');
-			return $f3->reroute('/admin/user');
+			if($u->credentialCheck($u->username,$u->displayname,$u->password)){
+				$u->save();
+				\StatusMessage::add('User updated succesfully','success');
+				return $f3->reroute('/admin/user');
+			}
 		}			
 		$_POST = $u->cast();
 		$f3->set('u',$u);

@@ -1,7 +1,7 @@
 <?php
 class User extends Controller {
 
-	public function view($f3) {		//need to check id exists
+	public function view($f3) {		
 		$userid = $f3->get('PARAMS.3');
 		if(empty($userid)) {
 			return $f3->reroute('/');
@@ -18,26 +18,6 @@ class User extends Controller {
 		$f3->set('articles',$articles);
 		$f3->set('comments',$comments);
 	}
-	
-	public function credentialCheck($username, $displayname, $password){
-		if($username != htmlspecialchars($username)){
-			StatusMessage::add('Invalid characters in username', 'danger');
-			return false;
-		}
-		else if($displayname != htmlspecialchars($displayname)){
-			StatusMessage::add('Invalid characters in displayname', 'danger');
-			return false;
-		}
-		else if($username == ""){
-			StatusMessage::add("Username can't be empty.",'danger');
-			return false;
-		}
-		else if($password == ""){
-			StatusMessage::add("Password can't be empty.",'danger');
-			return false;
-		}
-		else return true;
-	}
 
 	public function add($f3) {
 		if($this->request->is('post')) {
@@ -47,7 +27,7 @@ class User extends Controller {
 				StatusMessage::add('User already exists','danger');
 			} else if($password != $password2) {
 				StatusMessage::add('Passwords must match','danger');
-			} else if($this->credentialCheck($username, $displayname, $password)){
+			} else{
 				$user = $this->Model->Users;
 				$user->copyfrom('POST');
 				$user->created = mydate();
@@ -60,10 +40,12 @@ class User extends Controller {
 
 				//Set the users password
 				$user->setPassword($user->password);
-
-				$user->save();	
-				StatusMessage::add('Registration complete','success');
-				return $f3->reroute('/user/login');
+				
+				if($user->credentialCheck($username, $displayname, $password, $email)){
+					$user->save();	
+					StatusMessage::add('Registration complete','success');
+					return $f3->reroute('/user/login');
+				}
 			}
 		}
 	}
@@ -123,7 +105,7 @@ class User extends Controller {
 			} else if(isset($reset)) {
 				$u->avatar = '';
 			}
-			if($this->credentialCheck($u->username, $u->displayname, $u->password)){
+			if($user->credentialCheck($u->username, $u->displayname, $u->password)){
 				$u->save();
 				\StatusMessage::add('Profile updated successfully','success');
 				return $f3->reroute('/user/profile');
