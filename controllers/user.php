@@ -1,9 +1,15 @@
 <?php
 class User extends Controller {
 
-	public function view($f3) {
+	public function view($f3) {		//need to check id exists
 		$userid = $f3->get('PARAMS.3');
+		if(empty($userid)) {
+			return $f3->reroute('/');
+		}
 		$u = $this->Model->Users->fetch($userid);
+		if(empty($u['username'])) {
+			return $f3->reroute('/');
+		}
 
 		$articles = $this->Model->Posts->fetchAll(array('user_id' => $userid));
 		$comments = $this->Model->Comments->fetchAll(array('user_id' => $userid));
@@ -48,7 +54,6 @@ class User extends Controller {
 				$user->bio = '';
 				$user->level = 1;
 				$user->setPassword($password);
-				$user->setUsername($username);
 				if(empty($displayname)) {
 					$user->displayname = $user->username;
 				}
@@ -110,7 +115,7 @@ class User extends Controller {
 		$u = $this->Model->Users->fetch($id);
 		if($this->request->is('post')) {
 			$u->copyfrom('POST');
-
+			$u->bio = htmlspecialchars($u->bio);
 			//Handle avatar upload
 			if(isset($_FILES['avatar']) && isset($_FILES['avatar']['tmp_name']) && !empty($_FILES['avatar']['tmp_name'])) {
 				$url = File::Upload($_FILES['avatar']);		//TODO ************************VULNERABILITY HERE********************
@@ -118,10 +123,11 @@ class User extends Controller {
 			} else if(isset($reset)) {
 				$u->avatar = '';
 			}
-
-			$u->save();
-			\StatusMessage::add('Profile updated succesfully','success');
-			return $f3->reroute('/user/profile');
+			if($this->credentialCheck($u->username, $u->displayname, $u->password)){
+				$u->save();
+				\StatusMessage::add('Profile updated successfully','success');
+				return $f3->reroute('/user/profile');
+			}
 		}			
 		$_POST = $u->cast();
 		$f3->set('u',$u);

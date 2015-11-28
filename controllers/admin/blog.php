@@ -30,35 +30,41 @@
 			if($this->request->is('post')) {
 				$post = $this->Model->Posts;
 				extract($this->request->data);
-				$post->title = $title;
-				$post->content = $content;
-				$post->summary = $summary;
-				$post->user_id = $this->Auth->user('id');	
-				$post->created = $post->modified = mydate();
-
-				//Determine whether to publish or draft
-				if(!isset($Publish)) {
-					$post->published = null;
-				} else {
-					$post->published = mydate($this->request->data['published']);
+				if($title==""){		//not allowing blogs without titles, since they can't be searched for - and this is what I check in blog/view and admin/blog/edit to see if the requested blog exists
+					\StatusMessage::add('Your post must have a title!','danger');
 				}
+				else{
+					$post->title = htmlspecialchars($title);		//escaping all the chars that could be used for XSS before storing the post in the database
+					$post->content = htmlspecialchars($content);
+					$post->summary = htmlspecialchars($summary);
+					$post->user_id = $this->Auth->user('id');	
+					$post->created = $post->modified = mydate();
 
-				//Save post
-				$post->save();
-				$postid = $post->id;
+					//Determine whether to publish or draft
+					if(!isset($Publish)) {
+						$post->published = null;
+					} else {
+						$post->published = mydate($this->request->data['published']);
+					}
 
-				//Now assign categories
-				$link = $this->Model->Post_Categories;
-				if(!isset($categories)) { $categories = array(); }
-				foreach($categories as $category) {
-					$link->reset();
-					$link->category_id = $category;
-					$link->post_id = $postid;
-					$link->save();
+					//Save post
+					$post->save();
+					$postid = $post->id;
+
+					//Now assign categories
+					$link = $this->Model->Post_Categories;
+					if(!isset($categories)) { $categories = array(); }
+					foreach($categories as $category) {
+						$link->reset();
+						$link->category_id = $category;
+						$link->post_id = $postid;
+						$link->save();
+					}
+
+					\StatusMessage::add('Post added succesfully','success');
+					return $f3->reroute('/admin/blog');
 				}
-
-				\StatusMessage::add('Post added succesfully','success');
-				return $f3->reroute('/admin/blog');
+				
 			}
 			$categories = $this->Model->Categories->fetchList();
 			$f3->set('categories',$categories);
@@ -66,13 +72,23 @@
 
 		public function edit($f3) {
 			$postid = $f3->get('PARAMS.3');
+			if(empty($postid)) {
+				return $f3->reroute('/admin/blog');
+			}
 			$post = $this->Model->Posts->fetchById($postid);
+			if(empty($post['title'])) {
+				return $f3->reroute('/admin/blog');
+			}
 			$blog = $this->Model->map($post,array('post_id','Post_Categories','category_id'),'Categories',false);
 			if ($this->request->is('post')) {
 				extract($this->request->data);
 				$post->copyfrom('POST');
 				$post->modified = mydate();
 				$post->user_id = $this->Auth->user('id');
+				
+				$post->title = htmlspecialchars($title);		//doing the same again here
+				$post->content = htmlspecialchars($content);
+				$post->summary = htmlspecialchars($summary);
 				
 				//Determine whether to publish or draft
 				if(!isset($Publish)) {

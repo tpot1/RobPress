@@ -29,8 +29,8 @@ class Blog extends Controller {
 			return $f3->reroute('/');
 		}
 		$post = $this->Model->Posts->fetch($id);
-		if(empty($post)) {
-			return $f3->route('/');
+		if(empty($post['title'])) {
+			return $f3->reroute('/');
 		}
 		
 		$blog = $this->Model->map($post,'user_id','Users');
@@ -76,6 +76,10 @@ class Blog extends Controller {
 			if(empty($this->request->data['subject'])) {
 				$comment->subject = 'RE: ' . $post->title;
 			}
+			else{
+				$comment->subject = htmlspecialchars($this->request->data['subject']);
+			}
+			$comment->message = htmlspecialchars($comment->message);
 
 			$comment->save();
 

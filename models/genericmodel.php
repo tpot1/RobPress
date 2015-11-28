@@ -11,15 +11,6 @@ class GenericModel extends \DB\SQL\Mapper {
 		$this->name = strtolower($name);
 		$this->database = $db;
 	}
-	
-	public function makeSafe($args){
-		if($args.type == Post){
-			$args["title"] = htmlspecialchars($args["title"]);
-		}
-		
-		return $args;
-		
-	}
 
 	/** Fetch a list of all matching items */
 	public function fetchList($field='title',$conditions = array(),$options=array()) {
