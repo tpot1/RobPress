@@ -950,3 +950,141 @@
 [30-Nov-2015 16:03:04 UTC] 2
 [30-Nov-2015 16:03:09 UTC] 2
 [30-Nov-2015 16:03:12 UTC] 2
+[30-Nov-2015 17:18:44 UTC] 2
+[30-Nov-2015 17:18:53 UTC] 2
+[30-Nov-2015 17:18:55 UTC] 2
+[30-Nov-2015 17:19:06 UTC] 2
+[30-Nov-2015 17:19:21 UTC] 2
+[30-Nov-2015 17:19:23 UTC] 2
+[30-Nov-2015 17:19:25 UTC] 2
+[30-Nov-2015 17:20:20 UTC] 2
+[30-Nov-2015 17:20:26 UTC] 2
+[30-Nov-2015 17:20:28 UTC] 2
+[30-Nov-2015 17:20:30 UTC] 2
+[30-Nov-2015 17:20:30 UTC] 2
+[30-Nov-2015 17:20:42 UTC] 2
+[30-Nov-2015 17:20:44 UTC] 2
+[30-Nov-2015 17:20:45 UTC] 2
+[30-Nov-2015 17:20:47 UTC] 2
+[30-Nov-2015 17:20:53 UTC] 2
+[30-Nov-2015 17:20:55 UTC] 2
+[30-Nov-2015 17:21:01 UTC] 2
+[30-Nov-2015 17:21:12 UTC] 2
+[30-Nov-2015 17:21:12 UTC] touch(): Unable to create file /home/tp10g13/pages/&lt;script&gt;_alert(&quot;title&quot;);_&lt;/script&gt;.html because No such file or directory
+[30-Nov-2015 17:21:12 UTC] - models/pagesmodel.php:8 touch('/home/tp10g13/pages/<script>_alert("title");_</script>.html')
+[30-Nov-2015 17:21:12 UTC] - controllers/admin/page.php:15 PagesModel->create('<script>_alert("title");_</script>')
+[30-Nov-2015 17:21:12 UTC] - lib/base.php:1305 Base->call('Admin\page->add',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'controllers/; models/; helpers/; utility/;','BASE'=>'','BITMASK'=>2,'BODY'=>'title=%3Cscript%3E+alert%28%22title%22%29%3B+%3C%2Fscript%3E&Add+Page=Add+Page','CACHE'=>'folder=tmp/cache/','CASELESS'=>true,'DEBUG'=>3,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>false,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Accept'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Encoding'=>'gzip, deflate','Accept-Language'=>'en-GB,en-US;q=0.8,en;q=0.6','Authorization'=>'','Cache-Control'=>'max-age=0','Connection'=>'keep-alive','Cookie'=>'_ga=GA1.4.369367664.1392348589; __utma=89017231.916278231.1391190066.1448480813.1448481746.13; __utmz=89017231.1448481746.13.5.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); myecs=tp10g13; _ga=GA1.3.1448861846.1448397257; RobPress_User=YTo5OntzOjI6ImlkIjtzOjE6IjEiO3M6ODoidXNlcm5hbWUiO3M6NToiYWRtaW4iO3M6MTE6ImRpc3BsYXluYW1lIjtzOjEzOiJBZG1pbmlzdHJhdG9yIjtzOjU6ImVtYWlsIjtzOjE0OiJyb290QGxvY2FsaG9zdCI7czo4OiJwYXNzd29yZCI7czo1OiJhZG1pbiI7czo1OiJsZXZlbCI7czoxOiIyIjtzOjc6ImNyZWF0ZWQiO3M6MTk6IjIwMDAtMDEtMDEgMDA6MDA6MDAiO3M6MzoiYmlvIjtzOjQwOiImbHQ7cCZndDtJIGFtIEFkbWluaXN0cmF0b3IhJmx0Oy9wJmd0Ow0KIjtzOjY6ImF2YXRhciI7czo0NjoiL3VwbG9hZHMvc2hyZWstZm9yZXZlci1hZnRlci1tb3ZpZS1pbWFnZS03LmpwZyI7fQ%3D%3D; PHPSESSID=c4ca4238a0b923820dcc509a6f75849b','Host'=>'tp10g13.robpress.ecs.soton.ac.uk','Origin'=>'http://tp10g13.robpress.ecs.soton.ac.uk','Referer'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page','Upgrade-Insecure-Requests'=>'1','User-Agent'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'tp10g13.robpress.ecs.soton.ac.uk','IP'=>'152.78.236.66','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'tp10g13.robpress.ecs.soton.ac.uk','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en,en-US','LOCALES'=>'./','LOGS'=>'./','ONERROR'=>'Error->error','PACKAGE'=>'Fat-Free Framework','PARAMS'=>array(0=>'/admin/page/add','controller'=>'page','action'=>'add'),'PATH'=>'/admin/page/add','PATTERN'=>'/admin/@controller/@action','PLUGINS'=>'/home/tp10g13/lib/','PORT'=>'80','PREFIX'=>NULL,'QUIET'=>false,'RAW'=>false,'REALM'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page/add','RESPONSE'=>'','ROOT'=>'/home/tp10g13','ROUTES'=>array('/api/' . "
+[30-Nov-2015 17:21:12 UTC] - index.php:37 Base->run()
+[30-Nov-2015 17:21:12 UTC] PHP Notice:  Undefined index: class in /home/tp10g13/view/Error/error.htm on line 17
+[30-Nov-2015 17:21:12 UTC] PHP Notice:  Undefined index: type in /home/tp10g13/view/Error/error.htm on line 17
+[30-Nov-2015 17:21:12 UTC] PHP Warning:  Unknown: open(/var/lib/php5/sess_c4ca4238a0b923820dcc509a6f75849b, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-Nov-2015 17:21:12 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/var/lib/php5) in Unknown on line 0
+[30-Nov-2015 17:21:49 UTC] 2
+[30-Nov-2015 17:21:56 UTC] 2
+[30-Nov-2015 17:21:56 UTC] 2
+[30-Nov-2015 17:21:57 UTC] HTTP 404 (GET /admin/favicon.ico)
+[30-Nov-2015 17:21:57 UTC] - index.php:37 Base->run()
+[30-Nov-2015 17:21:57 UTC] HTTP 404 (GET /admin/favicon.ico)
+[30-Nov-2015 17:21:57 UTC] - index.php:37 Base->run()
+[30-Nov-2015 17:22:02 UTC] 2
+[30-Nov-2015 17:22:02 UTC] 2
+[30-Nov-2015 17:22:04 UTC] 2
+[30-Nov-2015 17:22:06 UTC] 2
+[30-Nov-2015 17:22:08 UTC] 2
+[30-Nov-2015 17:22:13 UTC] 2
+[30-Nov-2015 17:22:13 UTC] touch(): Unable to create file /home/tp10g13/pages/&lt;script&gt;_alert(&quot;title&quot;);_&lt;/script&gt;.html because No such file or directory
+[30-Nov-2015 17:22:13 UTC] - models/pagesmodel.php:8 touch('/home/tp10g13/pages/<script>_alert("title");_</script>.html')
+[30-Nov-2015 17:22:13 UTC] - controllers/admin/page.php:15 PagesModel->create('<script>_alert("title");_</script>')
+[30-Nov-2015 17:22:13 UTC] - lib/base.php:1305 Base->call('Admin\page->add',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'controllers/; models/; helpers/; utility/;','BASE'=>'','BITMASK'=>2,'BODY'=>'title=%3Cscript%3E+alert%28%22title%22%29%3B+%3C%2Fscript%3E&Add+Page=Add+Page','CACHE'=>'folder=tmp/cache/','CASELESS'=>true,'DEBUG'=>3,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>false,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Accept'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Encoding'=>'gzip, deflate','Accept-Language'=>'en-GB,en-US;q=0.8,en;q=0.6','Authorization'=>'','Cache-Control'=>'max-age=0','Connection'=>'keep-alive','Cookie'=>'_ga=GA1.4.369367664.1392348589; __utma=89017231.916278231.1391190066.1448480813.1448481746.13; __utmz=89017231.1448481746.13.5.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); myecs=tp10g13; _ga=GA1.3.1448861846.1448397257; RobPress_User=YTo5OntzOjI6ImlkIjtzOjE6IjEiO3M6ODoidXNlcm5hbWUiO3M6NToiYWRtaW4iO3M6MTE6ImRpc3BsYXluYW1lIjtzOjEzOiJBZG1pbmlzdHJhdG9yIjtzOjU6ImVtYWlsIjtzOjE0OiJyb290QGxvY2FsaG9zdCI7czo4OiJwYXNzd29yZCI7czo1OiJhZG1pbiI7czo1OiJsZXZlbCI7czoxOiIyIjtzOjc6ImNyZWF0ZWQiO3M6MTk6IjIwMDAtMDEtMDEgMDA6MDA6MDAiO3M6MzoiYmlvIjtzOjQwOiImbHQ7cCZndDtJIGFtIEFkbWluaXN0cmF0b3IhJmx0Oy9wJmd0Ow0KIjtzOjY6ImF2YXRhciI7czo0NjoiL3VwbG9hZHMvc2hyZWstZm9yZXZlci1hZnRlci1tb3ZpZS1pbWFnZS03LmpwZyI7fQ%3D%3D; PHPSESSID=c4ca4238a0b923820dcc509a6f75849b','Host'=>'tp10g13.robpress.ecs.soton.ac.uk','Origin'=>'http://tp10g13.robpress.ecs.soton.ac.uk','Referer'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page','Upgrade-Insecure-Requests'=>'1','User-Agent'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'tp10g13.robpress.ecs.soton.ac.uk','IP'=>'152.78.236.66','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'tp10g13.robpress.ecs.soton.ac.uk','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en,en-US','LOCALES'=>'./','LOGS'=>'./','ONERROR'=>'Error->error','PACKAGE'=>'Fat-Free Framework','PARAMS'=>array(0=>'/admin/page/add','controller'=>'page','action'=>'add'),'PATH'=>'/admin/page/add','PATTERN'=>'/admin/@controller/@action','PLUGINS'=>'/home/tp10g13/lib/','PORT'=>'80','PREFIX'=>NULL,'QUIET'=>false,'RAW'=>false,'REALM'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page/add','RESPONSE'=>'','ROOT'=>'/home/tp10g13','ROUTES'=>array('/api/' . "
+[30-Nov-2015 17:22:13 UTC] - index.php:37 Base->run()
+[30-Nov-2015 17:22:13 UTC] PHP Notice:  Undefined index: class in /home/tp10g13/view/Error/error.htm on line 17
+[30-Nov-2015 17:22:13 UTC] PHP Notice:  Undefined index: type in /home/tp10g13/view/Error/error.htm on line 17
+[30-Nov-2015 17:22:13 UTC] PHP Warning:  Unknown: open(/var/lib/php5/sess_c4ca4238a0b923820dcc509a6f75849b, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-Nov-2015 17:22:13 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/var/lib/php5) in Unknown on line 0
+[30-Nov-2015 17:22:23 UTC] 2
+[30-Nov-2015 17:22:28 UTC] 2
+[30-Nov-2015 17:22:28 UTC] 2
+[30-Nov-2015 17:22:34 UTC] 2
+[30-Nov-2015 17:22:34 UTC] 2
+[30-Nov-2015 17:22:39 UTC] 2
+[30-Nov-2015 17:22:43 UTC] 2
+[30-Nov-2015 17:22:43 UTC] 2
+[30-Nov-2015 17:22:44 UTC] 2
+[30-Nov-2015 17:22:44 UTC] 2
+[30-Nov-2015 17:22:46 UTC] 2
+[30-Nov-2015 17:22:46 UTC] 2
+[30-Nov-2015 17:24:23 UTC] 2
+[30-Nov-2015 17:24:23 UTC] 2
+[30-Nov-2015 17:24:27 UTC] 2
+[30-Nov-2015 17:24:27 UTC] 2
+[30-Nov-2015 17:24:30 UTC] 2
+[30-Nov-2015 17:24:30 UTC] 2
+[30-Nov-2015 17:24:50 UTC] 2
+[30-Nov-2015 17:24:50 UTC] Unable to open Page/admin_add.htm
+[30-Nov-2015 17:24:50 UTC] - controllers/controller.php:91 View->render('Page/admin_add.htm')
+[30-Nov-2015 17:24:50 UTC] - controllers/admin/admincontroller.php:50 Controller->afterRoute(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'controllers/; models/; helpers/; utility/;','BASE'=>'','BITMASK'=>2,'BODY'=>'title=%3Cihia&Add+Page=Add+Page','CACHE'=>'folder=tmp/cache/','CASELESS'=>true,'DEBUG'=>3,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>false,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Accept'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Encoding'=>'gzip, deflate','Accept-Language'=>'en-GB,en-US;q=0.8,en;q=0.6','Authorization'=>'','Cache-Control'=>'max-age=0','Connection'=>'keep-alive','Cookie'=>'_ga=GA1.4.369367664.1392348589; __utma=89017231.916278231.1391190066.1448480813.1448481746.13; __utmz=89017231.1448481746.13.5.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); myecs=tp10g13; _ga=GA1.3.1448861846.1448397257; RobPress_User=YTo5OntzOjI6ImlkIjtzOjE6IjEiO3M6ODoidXNlcm5hbWUiO3M6NToiYWRtaW4iO3M6MTE6ImRpc3BsYXluYW1lIjtzOjEzOiJBZG1pbmlzdHJhdG9yIjtzOjU6ImVtYWlsIjtzOjE0OiJyb290QGxvY2FsaG9zdCI7czo4OiJwYXNzd29yZCI7czo1OiJhZG1pbiI7czo1OiJsZXZlbCI7czoxOiIyIjtzOjc6ImNyZWF0ZWQiO3M6MTk6IjIwMDAtMDEtMDEgMDA6MDA6MDAiO3M6MzoiYmlvIjtzOjQwOiImbHQ7cCZndDtJIGFtIEFkbWluaXN0cmF0b3IhJmx0Oy9wJmd0Ow0KIjtzOjY6ImF2YXRhciI7czo0NjoiL3VwbG9hZHMvc2hyZWstZm9yZXZlci1hZnRlci1tb3ZpZS1pbWFnZS03LmpwZyI7fQ%3D%3D; PHPSESSID=c4ca4238a0b923820dcc509a6f75849b','Host'=>'tp10g13.robpress.ecs.soton.ac.uk','Origin'=>'http://tp10g13.robpress.ecs.soton.ac.uk','Referer'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page','Upgrade-Insecure-Requests'=>'1','User-Agent'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'tp10g13.robpress.ecs.soton.ac.uk','IP'=>'152.78.236.66','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'tp10g13.robpress.ecs.soton.ac.uk','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en,en-US','LOCALES'=>'./','LOGS'=>'./','ONERROR'=>'Error->error','PACKAGE'=>'Fat-Free Framework','PARAMS'=>array(0=>'/admin/page/add','controller'=>'page','action'=>'add'),'PATH'=>'/admin/page/add','PATTERN'=>'/admin/@controller/@action','PLUGINS'=>'/home/tp10g13/lib/','PORT'=>'80','PREFIX'=>NULL,'QUIET'=>false,'RAW'=>false,'REALM'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page/add','RESPONSE'=>'','ROOT'=>'/home/tp10g13','ROUTES'=>array('/api/' . "
+[30-Nov-2015 17:24:50 UTC] - lib/base.php:1305 Base->call('Admin\page->add',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'controllers/; models/; helpers/; utility/;','BASE'=>'','BITMASK'=>2,'BODY'=>'title=%3Cihia&Add+Page=Add+Page','CACHE'=>'folder=tmp/cache/','CASELESS'=>true,'DEBUG'=>3,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>false,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Accept'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Encoding'=>'gzip, deflate','Accept-Language'=>'en-GB,en-US;q=0.8,en;q=0.6','Authorization'=>'','Cache-Control'=>'max-age=0','Connection'=>'keep-alive','Cookie'=>'_ga=GA1.4.369367664.1392348589; __utma=89017231.916278231.1391190066.1448480813.1448481746.13; __utmz=89017231.1448481746.13.5.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); myecs=tp10g13; _ga=GA1.3.1448861846.1448397257; RobPress_User=YTo5OntzOjI6ImlkIjtzOjE6IjEiO3M6ODoidXNlcm5hbWUiO3M6NToiYWRtaW4iO3M6MTE6ImRpc3BsYXluYW1lIjtzOjEzOiJBZG1pbmlzdHJhdG9yIjtzOjU6ImVtYWlsIjtzOjE0OiJyb290QGxvY2FsaG9zdCI7czo4OiJwYXNzd29yZCI7czo1OiJhZG1pbiI7czo1OiJsZXZlbCI7czoxOiIyIjtzOjc6ImNyZWF0ZWQiO3M6MTk6IjIwMDAtMDEtMDEgMDA6MDA6MDAiO3M6MzoiYmlvIjtzOjQwOiImbHQ7cCZndDtJIGFtIEFkbWluaXN0cmF0b3IhJmx0Oy9wJmd0Ow0KIjtzOjY6ImF2YXRhciI7czo0NjoiL3VwbG9hZHMvc2hyZWstZm9yZXZlci1hZnRlci1tb3ZpZS1pbWFnZS03LmpwZyI7fQ%3D%3D; PHPSESSID=c4ca4238a0b923820dcc509a6f75849b','Host'=>'tp10g13.robpress.ecs.soton.ac.uk','Origin'=>'http://tp10g13.robpress.ecs.soton.ac.uk','Referer'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page','Upgrade-Insecure-Requests'=>'1','User-Agent'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'tp10g13.robpress.ecs.soton.ac.uk','IP'=>'152.78.236.66','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'tp10g13.robpress.ecs.soton.ac.uk','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en,en-US','LOCALES'=>'./','LOGS'=>'./','ONERROR'=>'Error->error','PACKAGE'=>'Fat-Free Framework','PARAMS'=>array(0=>'/admin/page/add','controller'=>'page','action'=>'add'),'PATH'=>'/admin/page/add','PATTERN'=>'/admin/@controller/@action','PLUGINS'=>'/home/tp10g13/lib/','PORT'=>'80','PREFIX'=>NULL,'QUIET'=>false,'RAW'=>false,'REALM'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page/add','RESPONSE'=>'','ROOT'=>'/home/tp10g13','ROUTES'=>array('/api/' . "
+[30-Nov-2015 17:24:50 UTC] - index.php:37 Base->run()
+[30-Nov-2015 17:24:50 UTC] PHP Warning:  Unknown: open(/var/lib/php5/sess_c4ca4238a0b923820dcc509a6f75849b, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-Nov-2015 17:24:50 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/var/lib/php5) in Unknown on line 0
+[30-Nov-2015 17:26:02 UTC] 2
+[30-Nov-2015 17:26:07 UTC] 2
+[30-Nov-2015 17:26:07 UTC] 2
+[30-Nov-2015 17:26:09 UTC] 2
+[30-Nov-2015 17:26:09 UTC] 2
+[30-Nov-2015 17:26:13 UTC] 2
+[30-Nov-2015 17:26:13 UTC] Unable to open Page/admin_add.htm
+[30-Nov-2015 17:26:13 UTC] - controllers/controller.php:91 View->render('Page/admin_add.htm')
+[30-Nov-2015 17:26:13 UTC] - controllers/admin/admincontroller.php:50 Controller->afterRoute(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'controllers/; models/; helpers/; utility/;','BASE'=>'','BITMASK'=>2,'BODY'=>'title=%3C&Add+Page=Add+Page','CACHE'=>'folder=tmp/cache/','CASELESS'=>true,'DEBUG'=>3,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>false,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Accept'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Encoding'=>'gzip, deflate','Accept-Language'=>'en-GB,en-US;q=0.8,en;q=0.6','Authorization'=>'','Cache-Control'=>'max-age=0','Connection'=>'keep-alive','Cookie'=>'_ga=GA1.4.369367664.1392348589; __utma=89017231.916278231.1391190066.1448480813.1448481746.13; __utmz=89017231.1448481746.13.5.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); myecs=tp10g13; _ga=GA1.3.1448861846.1448397257; RobPress_User=YTo5OntzOjI6ImlkIjtzOjE6IjEiO3M6ODoidXNlcm5hbWUiO3M6NToiYWRtaW4iO3M6MTE6ImRpc3BsYXluYW1lIjtzOjEzOiJBZG1pbmlzdHJhdG9yIjtzOjU6ImVtYWlsIjtzOjE0OiJyb290QGxvY2FsaG9zdCI7czo4OiJwYXNzd29yZCI7czo1OiJhZG1pbiI7czo1OiJsZXZlbCI7czoxOiIyIjtzOjc6ImNyZWF0ZWQiO3M6MTk6IjIwMDAtMDEtMDEgMDA6MDA6MDAiO3M6MzoiYmlvIjtzOjQwOiImbHQ7cCZndDtJIGFtIEFkbWluaXN0cmF0b3IhJmx0Oy9wJmd0Ow0KIjtzOjY6ImF2YXRhciI7czo0NjoiL3VwbG9hZHMvc2hyZWstZm9yZXZlci1hZnRlci1tb3ZpZS1pbWFnZS03LmpwZyI7fQ%3D%3D; PHPSESSID=c4ca4238a0b923820dcc509a6f75849b','Host'=>'tp10g13.robpress.ecs.soton.ac.uk','Origin'=>'http://tp10g13.robpress.ecs.soton.ac.uk','Referer'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page','Upgrade-Insecure-Requests'=>'1','User-Agent'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'tp10g13.robpress.ecs.soton.ac.uk','IP'=>'152.78.236.66','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'tp10g13.robpress.ecs.soton.ac.uk','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en,en-US','LOCALES'=>'./','LOGS'=>'./','ONERROR'=>'Error->error','PACKAGE'=>'Fat-Free Framework','PARAMS'=>array(0=>'/admin/page/add','controller'=>'page','action'=>'add'),'PATH'=>'/admin/page/add','PATTERN'=>'/admin/@controller/@action','PLUGINS'=>'/home/tp10g13/lib/','PORT'=>'80','PREFIX'=>NULL,'QUIET'=>false,'RAW'=>false,'REALM'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page/add','RESPONSE'=>'','ROOT'=>'/home/tp10g13','ROUTES'=>array('/api/' . "
+[30-Nov-2015 17:26:13 UTC] - lib/base.php:1305 Base->call('Admin\page->add',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'controllers/; models/; helpers/; utility/;','BASE'=>'','BITMASK'=>2,'BODY'=>'title=%3C&Add+Page=Add+Page','CACHE'=>'folder=tmp/cache/','CASELESS'=>true,'DEBUG'=>3,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>false,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Accept'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Encoding'=>'gzip, deflate','Accept-Language'=>'en-GB,en-US;q=0.8,en;q=0.6','Authorization'=>'','Cache-Control'=>'max-age=0','Connection'=>'keep-alive','Cookie'=>'_ga=GA1.4.369367664.1392348589; __utma=89017231.916278231.1391190066.1448480813.1448481746.13; __utmz=89017231.1448481746.13.5.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); myecs=tp10g13; _ga=GA1.3.1448861846.1448397257; RobPress_User=YTo5OntzOjI6ImlkIjtzOjE6IjEiO3M6ODoidXNlcm5hbWUiO3M6NToiYWRtaW4iO3M6MTE6ImRpc3BsYXluYW1lIjtzOjEzOiJBZG1pbmlzdHJhdG9yIjtzOjU6ImVtYWlsIjtzOjE0OiJyb290QGxvY2FsaG9zdCI7czo4OiJwYXNzd29yZCI7czo1OiJhZG1pbiI7czo1OiJsZXZlbCI7czoxOiIyIjtzOjc6ImNyZWF0ZWQiO3M6MTk6IjIwMDAtMDEtMDEgMDA6MDA6MDAiO3M6MzoiYmlvIjtzOjQwOiImbHQ7cCZndDtJIGFtIEFkbWluaXN0cmF0b3IhJmx0Oy9wJmd0Ow0KIjtzOjY6ImF2YXRhciI7czo0NjoiL3VwbG9hZHMvc2hyZWstZm9yZXZlci1hZnRlci1tb3ZpZS1pbWFnZS03LmpwZyI7fQ%3D%3D; PHPSESSID=c4ca4238a0b923820dcc509a6f75849b','Host'=>'tp10g13.robpress.ecs.soton.ac.uk','Origin'=>'http://tp10g13.robpress.ecs.soton.ac.uk','Referer'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page','Upgrade-Insecure-Requests'=>'1','User-Agent'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'tp10g13.robpress.ecs.soton.ac.uk','IP'=>'152.78.236.66','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'tp10g13.robpress.ecs.soton.ac.uk','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en,en-US','LOCALES'=>'./','LOGS'=>'./','ONERROR'=>'Error->error','PACKAGE'=>'Fat-Free Framework','PARAMS'=>array(0=>'/admin/page/add','controller'=>'page','action'=>'add'),'PATH'=>'/admin/page/add','PATTERN'=>'/admin/@controller/@action','PLUGINS'=>'/home/tp10g13/lib/','PORT'=>'80','PREFIX'=>NULL,'QUIET'=>false,'RAW'=>false,'REALM'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page/add','RESPONSE'=>'','ROOT'=>'/home/tp10g13','ROUTES'=>array('/api/' . "
+[30-Nov-2015 17:26:13 UTC] - index.php:37 Base->run()
+[30-Nov-2015 17:26:13 UTC] PHP Warning:  Unknown: open(/var/lib/php5/sess_c4ca4238a0b923820dcc509a6f75849b, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-Nov-2015 17:26:13 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/var/lib/php5) in Unknown on line 0
+[30-Nov-2015 17:30:27 UTC] 2
+[30-Nov-2015 17:30:28 UTC] 2
+[30-Nov-2015 17:30:28 UTC] Unable to open Page/admin_add.htm
+[30-Nov-2015 17:30:28 UTC] - controllers/controller.php:91 View->render('Page/admin_add.htm')
+[30-Nov-2015 17:30:28 UTC] - controllers/admin/admincontroller.php:50 Controller->afterRoute(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'controllers/; models/; helpers/; utility/;','BASE'=>'','BITMASK'=>2,'BODY'=>'title=%3C&Add+Page=Add+Page','CACHE'=>'folder=tmp/cache/','CASELESS'=>true,'DEBUG'=>3,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>false,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Accept'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Encoding'=>'gzip, deflate','Accept-Language'=>'en-GB,en-US;q=0.8,en;q=0.6','Authorization'=>'','Cache-Control'=>'max-age=0','Connection'=>'keep-alive','Cookie'=>'_ga=GA1.4.369367664.1392348589; __utma=89017231.916278231.1391190066.1448480813.1448481746.13; __utmz=89017231.1448481746.13.5.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); myecs=tp10g13; _ga=GA1.3.1448861846.1448397257; RobPress_User=YTo5OntzOjI6ImlkIjtzOjE6IjEiO3M6ODoidXNlcm5hbWUiO3M6NToiYWRtaW4iO3M6MTE6ImRpc3BsYXluYW1lIjtzOjEzOiJBZG1pbmlzdHJhdG9yIjtzOjU6ImVtYWlsIjtzOjE0OiJyb290QGxvY2FsaG9zdCI7czo4OiJwYXNzd29yZCI7czo1OiJhZG1pbiI7czo1OiJsZXZlbCI7czoxOiIyIjtzOjc6ImNyZWF0ZWQiO3M6MTk6IjIwMDAtMDEtMDEgMDA6MDA6MDAiO3M6MzoiYmlvIjtzOjQwOiImbHQ7cCZndDtJIGFtIEFkbWluaXN0cmF0b3IhJmx0Oy9wJmd0Ow0KIjtzOjY6ImF2YXRhciI7czo0NjoiL3VwbG9hZHMvc2hyZWstZm9yZXZlci1hZnRlci1tb3ZpZS1pbWFnZS03LmpwZyI7fQ%3D%3D; PHPSESSID=c4ca4238a0b923820dcc509a6f75849b','Host'=>'tp10g13.robpress.ecs.soton.ac.uk','Origin'=>'http://tp10g13.robpress.ecs.soton.ac.uk','Referer'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page','Upgrade-Insecure-Requests'=>'1','User-Agent'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'tp10g13.robpress.ecs.soton.ac.uk','IP'=>'152.78.236.66','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'tp10g13.robpress.ecs.soton.ac.uk','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en,en-US','LOCALES'=>'./','LOGS'=>'./','ONERROR'=>'Error->error','PACKAGE'=>'Fat-Free Framework','PARAMS'=>array(0=>'/admin/page/add','controller'=>'page','action'=>'add'),'PATH'=>'/admin/page/add','PATTERN'=>'/admin/@controller/@action','PLUGINS'=>'/home/tp10g13/lib/','PORT'=>'80','PREFIX'=>NULL,'QUIET'=>false,'RAW'=>false,'REALM'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page/add','RESPONSE'=>'','ROOT'=>'/home/tp10g13','ROUTES'=>array('/api/' . "
+[30-Nov-2015 17:30:28 UTC] - lib/base.php:1305 Base->call('Admin\page->add',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'controllers/; models/; helpers/; utility/;','BASE'=>'','BITMASK'=>2,'BODY'=>'title=%3C&Add+Page=Add+Page','CACHE'=>'folder=tmp/cache/','CASELESS'=>true,'DEBUG'=>3,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>false,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Accept'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Encoding'=>'gzip, deflate','Accept-Language'=>'en-GB,en-US;q=0.8,en;q=0.6','Authorization'=>'','Cache-Control'=>'max-age=0','Connection'=>'keep-alive','Cookie'=>'_ga=GA1.4.369367664.1392348589; __utma=89017231.916278231.1391190066.1448480813.1448481746.13; __utmz=89017231.1448481746.13.5.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); myecs=tp10g13; _ga=GA1.3.1448861846.1448397257; RobPress_User=YTo5OntzOjI6ImlkIjtzOjE6IjEiO3M6ODoidXNlcm5hbWUiO3M6NToiYWRtaW4iO3M6MTE6ImRpc3BsYXluYW1lIjtzOjEzOiJBZG1pbmlzdHJhdG9yIjtzOjU6ImVtYWlsIjtzOjE0OiJyb290QGxvY2FsaG9zdCI7czo4OiJwYXNzd29yZCI7czo1OiJhZG1pbiI7czo1OiJsZXZlbCI7czoxOiIyIjtzOjc6ImNyZWF0ZWQiO3M6MTk6IjIwMDAtMDEtMDEgMDA6MDA6MDAiO3M6MzoiYmlvIjtzOjQwOiImbHQ7cCZndDtJIGFtIEFkbWluaXN0cmF0b3IhJmx0Oy9wJmd0Ow0KIjtzOjY6ImF2YXRhciI7czo0NjoiL3VwbG9hZHMvc2hyZWstZm9yZXZlci1hZnRlci1tb3ZpZS1pbWFnZS03LmpwZyI7fQ%3D%3D; PHPSESSID=c4ca4238a0b923820dcc509a6f75849b','Host'=>'tp10g13.robpress.ecs.soton.ac.uk','Origin'=>'http://tp10g13.robpress.ecs.soton.ac.uk','Referer'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page','Upgrade-Insecure-Requests'=>'1','User-Agent'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'tp10g13.robpress.ecs.soton.ac.uk','IP'=>'152.78.236.66','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'tp10g13.robpress.ecs.soton.ac.uk','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en,en-US','LOCALES'=>'./','LOGS'=>'./','ONERROR'=>'Error->error','PACKAGE'=>'Fat-Free Framework','PARAMS'=>array(0=>'/admin/page/add','controller'=>'page','action'=>'add'),'PATH'=>'/admin/page/add','PATTERN'=>'/admin/@controller/@action','PLUGINS'=>'/home/tp10g13/lib/','PORT'=>'80','PREFIX'=>NULL,'QUIET'=>false,'RAW'=>false,'REALM'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/page/add','RESPONSE'=>'','ROOT'=>'/home/tp10g13','ROUTES'=>array('/api/' . "
+[30-Nov-2015 17:30:28 UTC] - index.php:37 Base->run()
+[30-Nov-2015 17:30:28 UTC] PHP Warning:  Unknown: open(/var/lib/php5/sess_c4ca4238a0b923820dcc509a6f75849b, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-Nov-2015 17:30:28 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/var/lib/php5) in Unknown on line 0
+[30-Nov-2015 17:32:47 UTC] 2
+[30-Nov-2015 17:32:49 UTC] 2
+[30-Nov-2015 17:32:49 UTC] 2
+[30-Nov-2015 17:33:08 UTC] 2
+[30-Nov-2015 17:33:08 UTC] 2
+[30-Nov-2015 17:33:14 UTC] 2
+[30-Nov-2015 17:33:15 UTC] 2
+[30-Nov-2015 17:33:17 UTC] 2
+[30-Nov-2015 17:33:17 UTC] 2
+[30-Nov-2015 17:33:19 UTC] 2
+[30-Nov-2015 17:33:20 UTC] 2
+[30-Nov-2015 17:33:21 UTC] 2
+[30-Nov-2015 17:33:21 UTC] 2
+[30-Nov-2015 17:34:03 UTC] 2
+[30-Nov-2015 17:34:03 UTC] 2
+[30-Nov-2015 17:34:07 UTC] 2
+[30-Nov-2015 17:34:11 UTC] 2
+[30-Nov-2015 17:34:11 UTC] 2
+[30-Nov-2015 17:37:32 UTC] 2
+[30-Nov-2015 17:37:35 UTC] 2
+[30-Nov-2015 17:37:41 UTC] 2
+[30-Nov-2015 17:37:48 UTC] 2
+[30-Nov-2015 17:37:52 UTC] 2
+[30-Nov-2015 17:37:54 UTC] 2
+[30-Nov-2015 17:37:55 UTC] 2
+[30-Nov-2015 17:37:56 UTC] 2
+[30-Nov-2015 17:37:56 UTC] 2
+[30-Nov-2015 17:38:02 UTC] 2
+[30-Nov-2015 17:38:02 UTC] 2
+[30-Nov-2015 17:38:04 UTC] 2
+[30-Nov-2015 17:38:34 UTC] 2
+[30-Nov-2015 17:38:34 UTC] 2
+[30-Nov-2015 17:38:36 UTC] 2
+[30-Nov-2015 17:38:37 UTC] 2
+[30-Nov-2015 17:38:38 UTC] 2
+[30-Nov-2015 17:38:39 UTC] 2
+[30-Nov-2015 17:38:41 UTC] 2
+[30-Nov-2015 17:38:43 UTC] 2
+[30-Nov-2015 17:38:48 UTC] 2

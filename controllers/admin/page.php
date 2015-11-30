@@ -12,10 +12,16 @@ class Page extends AdminController {
 	public function add($f3) {
 		if($this->request->is('post')) {
 			$pagename = strtolower(str_replace(" ","_",$this->request->data['title']));
-			$this->Model->Pages->create($pagename);
+			if ($pagename != htmlspecialchars($pagename)){
+				\StatusMessage::add('Invalid characters in page name','danger');
+				return $f3->reroute('/admin/page');
+			}
+			else{
+				$this->Model->Pages->create($pagename);
 		
-			\StatusMessage::add('Page created succesfully','success');
-			return $f3->reroute('/admin/page/edit/' . $pagename);
+				\StatusMessage::add('Page created succesfully','success');
+				return $f3->reroute('/admin/page/edit/' . $pagename);
+			}
 		}
 	}
 

@@ -63,7 +63,7 @@ class Controller {
 		//Identify action
 		$controller = get_class($this);	
 		if($f3->exists('PARAMS.action')) {		
-			$action = $f3->get('PARAMS.action');	//TODO ****************POSSIBLE VULNERABILITY HERE*******************************
+			$action = $f3->get('PARAMS.action');	
 		} else {
 			$action = 'index';
 		}

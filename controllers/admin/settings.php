@@ -9,7 +9,7 @@
 			if($this->request->is('post')) {
 				foreach($settings as $setting) {
 					if(isset($this->request->data[$setting->setting])) {
-						$setting->value = $this->request->data[$setting->setting];
+						$setting->value = htmlspecialchars($this->request->data[$setting->setting]);
 						$setting->save();
 					} else {
 						$setting->value = 0;
