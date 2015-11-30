@@ -21,6 +21,7 @@ class User extends AdminController {
 		if($this->request->is('post')) {
 			$u->copyfrom('POST');
 			$u->setPassword($this->request->data['password']);
+			//TODO***************************NEED TO ADD CODE FOR FILE UPLOAD HERE****************************
 			if($u->credentialCheck($u->username,$u->displayname,$u->password)){
 				$u->save();
 				\StatusMessage::add('User updated succesfully','success');

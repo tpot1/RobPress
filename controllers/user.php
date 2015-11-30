@@ -41,11 +41,22 @@ class User extends Controller {
 				//Set the users password
 				$user->setPassword($user->password);
 				
-				if($user->credentialCheck($username, $displayname, $password, $email)){
+				$settings = $this->Model->Settings;
+				$debug = $settings->getSetting('debug');
+
+				if(!$debug){
+					if($user->credentialCheck($username, $displayname, $password, $email)){
+						$user->save();	
+						StatusMessage::add('Registration complete','success');
+						return $f3->reroute('/user/login');
+					}
+				}
+				else{
 					$user->save();	
 					StatusMessage::add('Registration complete','success');
 					return $f3->reroute('/user/login');
 				}
+				
 			}
 		}
 	}

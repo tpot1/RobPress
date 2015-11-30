@@ -9,8 +9,13 @@
 	echo $form->add('username');
 	echo $form->add('password',array('type' => 'password','value' => ''));
 	echo $form->add('Login',array('type' => 'submit'));
+	echo $form->captcha();
 	echo $form->end();
+
 ?>
+
+<img alt="" src="<?=$site['base']?>/uploads/captcha.jpg"/></p>
+<br><input type="text" name="cap" placeholder="Type above Text"/>
 
 <hr/>
 <p>Don't have an account yet? Why not <a href="<?=$site['base']?>/user/add">Register</a>
