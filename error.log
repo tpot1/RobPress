@@ -1088,3 +1088,173 @@
 [30-Nov-2015 17:38:41 UTC] 2
 [30-Nov-2015 17:38:43 UTC] 2
 [30-Nov-2015 17:38:48 UTC] 2
+[30-Nov-2015 17:45:29 UTC] 2
+[30-Nov-2015 17:45:31 UTC] 2
+[30-Nov-2015 17:45:45 UTC] 2
+[30-Nov-2015 17:45:45 UTC] 2
+[30-Nov-2015 17:45:46 UTC] 2
+[30-Nov-2015 17:45:51 UTC] 2
+[30-Nov-2015 17:45:51 UTC] 2
+[30-Nov-2015 17:45:53 UTC] 2
+[30-Nov-2015 17:45:54 UTC] 2
+[30-Nov-2015 18:00:57 UTC] 2
+[30-Nov-2015 18:01:04 UTC] 2
+[30-Nov-2015 18:01:09 UTC] 2
+[30-Nov-2015 18:01:11 UTC] 2
+[30-Nov-2015 18:01:34 UTC] 2
+[30-Nov-2015 18:01:34 UTC] 2
+[30-Nov-2015 18:03:23 UTC] 2
+[30-Nov-2015 18:03:25 UTC] 2
+[30-Nov-2015 18:03:27 UTC] 2
+[30-Nov-2015 18:03:36 UTC] 2
+[30-Nov-2015 18:03:36 UTC] 
+[30-Nov-2015 18:03:36 UTC] 
+[30-Nov-2015 18:03:36 UTC] 
+[30-Nov-2015 18:03:37 UTC] 2
+[30-Nov-2015 18:04:24 UTC] 2
+[30-Nov-2015 18:04:26 UTC] 2
+[30-Nov-2015 18:04:29 UTC] 2
+[30-Nov-2015 18:04:29 UTC] 2
+[30-Nov-2015 18:04:31 UTC] 2
+[30-Nov-2015 18:04:44 UTC] 2
+[30-Nov-2015 18:04:44 UTC] <title>
+[30-Nov-2015 18:04:44 UTC] <summary>
+[30-Nov-2015 18:04:44 UTC] <p>&lt;content&gt;</p>
+
+[30-Nov-2015 18:04:44 UTC] 2
+[30-Nov-2015 18:06:10 UTC] 2
+[30-Nov-2015 18:06:13 UTC] 2
+[30-Nov-2015 18:06:15 UTC] 2
+[30-Nov-2015 18:06:15 UTC] 2
+[30-Nov-2015 18:06:16 UTC] 2
+[30-Nov-2015 18:06:37 UTC] 2
+[30-Nov-2015 18:06:37 UTC] <title>
+[30-Nov-2015 18:06:37 UTC] <summary>
+[30-Nov-2015 18:06:37 UTC] <p>&lt;script&gt; alert(&quot;content&quot;); &lt;/script&gt;</p>
+
+[30-Nov-2015 18:06:38 UTC] 2
+[30-Nov-2015 18:07:45 UTC] 2
+[30-Nov-2015 18:07:47 UTC] 2
+[30-Nov-2015 18:07:50 UTC] 2
+[30-Nov-2015 18:07:50 UTC] 2
+[30-Nov-2015 18:07:52 UTC] 2
+[30-Nov-2015 18:07:52 UTC] 2
+[30-Nov-2015 18:07:53 UTC] 2
+[30-Nov-2015 18:07:53 UTC] 2
+[30-Nov-2015 18:07:55 UTC] 2
+[30-Nov-2015 18:08:11 UTC] 2
+[30-Nov-2015 18:08:11 UTC] <title>
+[30-Nov-2015 18:08:11 UTC] <summary>
+[30-Nov-2015 18:08:11 UTC] &lt;p&gt;&amp;lt;content&amp;gt;&lt;/p&gt;
+
+[30-Nov-2015 18:08:11 UTC] 2
+[30-Nov-2015 18:09:32 UTC] 2
+[30-Nov-2015 18:09:33 UTC] 2
+[30-Nov-2015 18:09:34 UTC] 2
+[30-Nov-2015 18:09:47 UTC] 2
+[30-Nov-2015 18:09:47 UTC] <title>
+[30-Nov-2015 18:09:47 UTC] <summary>
+[30-Nov-2015 18:09:47 UTC] <p><strong>TESTETST&gt;&lt;&gt;&lt;&gt;&lt;&gt;</strong></p>
+
+[30-Nov-2015 18:09:48 UTC] 2
+[30-Nov-2015 18:10:17 UTC] 2
+[30-Nov-2015 18:10:19 UTC] 2
+[30-Nov-2015 18:10:20 UTC] 2
+[30-Nov-2015 18:10:21 UTC] 2
+[30-Nov-2015 18:10:22 UTC] 2
+[30-Nov-2015 18:10:38 UTC] 2
+[30-Nov-2015 18:10:38 UTC] <title>
+[30-Nov-2015 18:10:38 UTC] <summary>
+[30-Nov-2015 18:10:38 UTC] <p><u><em><strong>TESAT&lt;&gt;&lt;&gt;&lt;&gt;</strong></em></u></p>
+
+[30-Nov-2015 18:10:39 UTC] 2
+[30-Nov-2015 18:10:53 UTC] 2
+[30-Nov-2015 18:10:56 UTC] 2
+[30-Nov-2015 18:11:01 UTC] 2
+[30-Nov-2015 18:11:01 UTC] 2
+[30-Nov-2015 18:11:02 UTC] 2
+[30-Nov-2015 18:11:26 UTC] 2
+[30-Nov-2015 18:11:26 UTC] <title>
+[30-Nov-2015 18:11:26 UTC] <summary>
+[30-Nov-2015 18:11:26 UTC] <p>&lt;script&gt; alert(&quot;content&quot;); &lt;/script&gt;</p>
+
+[30-Nov-2015 18:11:27 UTC] 2
+[30-Nov-2015 18:11:45 UTC] 2
+[30-Nov-2015 18:11:47 UTC] 2
+[30-Nov-2015 18:11:50 UTC] 2
+[30-Nov-2015 18:12:04 UTC] 2
+[30-Nov-2015 18:12:04 UTC] 2
+[30-Nov-2015 18:12:13 UTC] 2
+[30-Nov-2015 18:12:14 UTC] 2
+[30-Nov-2015 18:12:16 UTC] 2
+[30-Nov-2015 18:12:21 UTC] 2
+[30-Nov-2015 18:12:21 UTC] 2
+[30-Nov-2015 18:12:23 UTC] 2
+[30-Nov-2015 18:12:25 UTC] 2
+[30-Nov-2015 18:12:25 UTC] 2
+[30-Nov-2015 18:13:12 UTC] 2
+[30-Nov-2015 18:13:14 UTC] 2
+[30-Nov-2015 18:13:18 UTC] 2
+[30-Nov-2015 18:13:18 UTC] 2
+[30-Nov-2015 18:13:20 UTC] 2
+[30-Nov-2015 18:13:44 UTC] 2
+[30-Nov-2015 18:13:44 UTC] <title>
+[30-Nov-2015 18:13:44 UTC] <summary>
+[30-Nov-2015 18:13:44 UTC] <p>&lt;script&gt; alert(&quot;hi&quot;); &lt;/script&gt;</p>
+
+[30-Nov-2015 18:13:44 UTC] 2
+[30-Nov-2015 18:13:53 UTC] 2
+[30-Nov-2015 18:13:55 UTC] 2
+[30-Nov-2015 18:13:57 UTC] 2
+[30-Nov-2015 18:14:24 UTC] 2
+[30-Nov-2015 18:14:31 UTC] 2
+[30-Nov-2015 18:14:34 UTC] 2
+[30-Nov-2015 18:14:35 UTC] 2
+[30-Nov-2015 18:17:03 UTC] 2
+[30-Nov-2015 18:17:03 UTC] 2
+[30-Nov-2015 18:17:25 UTC] 2
+[30-Nov-2015 18:17:27 UTC] 2
+[30-Nov-2015 18:17:29 UTC] 2
+[30-Nov-2015 18:17:51 UTC] 2
+[30-Nov-2015 18:17:51 UTC] 2
+[30-Nov-2015 18:20:24 UTC] 2
+[30-Nov-2015 18:20:26 UTC] 2
+[30-Nov-2015 18:20:26 UTC] Trying to get property of non-object
+[30-Nov-2015 18:20:26 UTC] - view/Comment/admin_index.htm:56 Base->{closure}(8,'Trying to get property of non-object','/home/tp10g13/view/Comment/admin_index.htm',56,array('AGENT'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'controllers/; models/; helpers/; utility/;','BASE'=>'','BITMASK'=>2,'BODY'=>'','CACHE'=>'folder=tmp/cache/','CASELESS'=>true,'DEBUG'=>3,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>false,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Accept'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Encoding'=>'gzip, deflate, sdch','Accept-Language'=>'en-GB,en-US;q=0.8,en;q=0.6','Authorization'=>'','Connection'=>'keep-alive','Cookie'=>'_ga=GA1.4.369367664.1392348589; __utma=89017231.916278231.1391190066.1448480813.1448481746.13; __utmz=89017231.1448481746.13.5.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); myecs=tp10g13; _ga=GA1.3.1448861846.1448397257; RobPress_User=YTo5OntzOjI6ImlkIjtzOjE6IjEiO3M6ODoidXNlcm5hbWUiO3M6NToiYWRtaW4iO3M6MTE6ImRpc3BsYXluYW1lIjtzOjEzOiJBZG1pbmlzdHJhdG9yIjtzOjU6ImVtYWlsIjtzOjE0OiJyb290QGxvY2FsaG9zdCI7czo4OiJwYXNzd29yZCI7czo1OiJhZG1pbiI7czo1OiJsZXZlbCI7czoxOiIyIjtzOjc6ImNyZWF0ZWQiO3M6MTk6IjIwMDAtMDEtMDEgMDA6MDA6MDAiO3M6MzoiYmlvIjtzOjQwOiImbHQ7cCZndDtJIGFtIEFkbWluaXN0cmF0b3IhJmx0Oy9wJmd0Ow0KIjtzOjY6ImF2YXRhciI7czo0NjoiL3VwbG9hZHMvc2hyZWstZm9yZXZlci1hZnRlci1tb3ZpZS1pbWFnZS03LmpwZyI7fQ%3D%3D; PHPSESSID=c4ca4238a0b923820dcc509a6f75849b','Host'=>'tp10g13.robpress.ecs.soton.ac.uk','Referer'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin','Upgrade-Insecure-Requests'=>'1','User-Agent'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'tp10g13.robpress.ecs.soton.ac.uk','IP'=>'152.78.236.66','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'tp10g13.robpress.ecs.soton.ac.uk','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en,en-US','LOCALES'=>'./','LOGS'=>'./','ONERROR'=>'Error->error','PACKAGE'=>'Fat-Free Framework','PARAMS'=>array(0=>'/admin/comment','controller'=>'comment'),'PATH'=>'/admin/comment','PATTERN'=>'/admin/@controller','PLUGINS'=>'/home/tp10g13/lib/','PORT'=>'80','PREFIX'=>NULL,'QUIET'=>false,'RAW'=>false,'REALM'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/comment','RESPONSE'=>'','ROOT'=>'/home/tp10g13','ROUTES'=>array('/api/' . "
+[30-Nov-2015 18:20:26 UTC] - lib/base.php:2075 require('/home/tp10g13/view/Comment/admin_index.htm')
+[30-Nov-2015 18:20:26 UTC] - lib/base.php:2101 View->sandbox(NULL)
+[30-Nov-2015 18:20:26 UTC] - controllers/controller.php:91 View->render('Comment/admin_index.htm')
+[30-Nov-2015 18:20:26 UTC] - controllers/admin/admincontroller.php:50 Controller->afterRoute(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'controllers/; models/; helpers/; utility/;','BASE'=>'','BITMASK'=>2,'BODY'=>'','CACHE'=>'folder=tmp/cache/','CASELESS'=>true,'DEBUG'=>3,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>false,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Accept'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Encoding'=>'gzip, deflate, sdch','Accept-Language'=>'en-GB,en-US;q=0.8,en;q=0.6','Authorization'=>'','Connection'=>'keep-alive','Cookie'=>'_ga=GA1.4.369367664.1392348589; __utma=89017231.916278231.1391190066.1448480813.1448481746.13; __utmz=89017231.1448481746.13.5.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); myecs=tp10g13; _ga=GA1.3.1448861846.1448397257; RobPress_User=YTo5OntzOjI6ImlkIjtzOjE6IjEiO3M6ODoidXNlcm5hbWUiO3M6NToiYWRtaW4iO3M6MTE6ImRpc3BsYXluYW1lIjtzOjEzOiJBZG1pbmlzdHJhdG9yIjtzOjU6ImVtYWlsIjtzOjE0OiJyb290QGxvY2FsaG9zdCI7czo4OiJwYXNzd29yZCI7czo1OiJhZG1pbiI7czo1OiJsZXZlbCI7czoxOiIyIjtzOjc6ImNyZWF0ZWQiO3M6MTk6IjIwMDAtMDEtMDEgMDA6MDA6MDAiO3M6MzoiYmlvIjtzOjQwOiImbHQ7cCZndDtJIGFtIEFkbWluaXN0cmF0b3IhJmx0Oy9wJmd0Ow0KIjtzOjY6ImF2YXRhciI7czo0NjoiL3VwbG9hZHMvc2hyZWstZm9yZXZlci1hZnRlci1tb3ZpZS1pbWFnZS03LmpwZyI7fQ%3D%3D; PHPSESSID=c4ca4238a0b923820dcc509a6f75849b','Host'=>'tp10g13.robpress.ecs.soton.ac.uk','Referer'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin','Upgrade-Insecure-Requests'=>'1','User-Agent'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'tp10g13.robpress.ecs.soton.ac.uk','IP'=>'152.78.236.66','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'tp10g13.robpress.ecs.soton.ac.uk','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en,en-US','LOCALES'=>'./','LOGS'=>'./','ONERROR'=>'Error->error','PACKAGE'=>'Fat-Free Framework','PARAMS'=>array(0=>'/admin/comment','controller'=>'comment'),'PATH'=>'/admin/comment','PATTERN'=>'/admin/@controller','PLUGINS'=>'/home/tp10g13/lib/','PORT'=>'80','PREFIX'=>NULL,'QUIET'=>false,'RAW'=>false,'REALM'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/comment','RESPONSE'=>'','ROOT'=>'/home/tp10g13','ROUTES'=>array('/api/' . "
+[30-Nov-2015 18:20:26 UTC] - lib/base.php:1305 Base->call('Admin\comment->index',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'controllers/; models/; helpers/; utility/;','BASE'=>'','BITMASK'=>2,'BODY'=>'','CACHE'=>'folder=tmp/cache/','CASELESS'=>true,'DEBUG'=>3,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>false,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Accept'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Encoding'=>'gzip, deflate, sdch','Accept-Language'=>'en-GB,en-US;q=0.8,en;q=0.6','Authorization'=>'','Connection'=>'keep-alive','Cookie'=>'_ga=GA1.4.369367664.1392348589; __utma=89017231.916278231.1391190066.1448480813.1448481746.13; __utmz=89017231.1448481746.13.5.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); myecs=tp10g13; _ga=GA1.3.1448861846.1448397257; RobPress_User=YTo5OntzOjI6ImlkIjtzOjE6IjEiO3M6ODoidXNlcm5hbWUiO3M6NToiYWRtaW4iO3M6MTE6ImRpc3BsYXluYW1lIjtzOjEzOiJBZG1pbmlzdHJhdG9yIjtzOjU6ImVtYWlsIjtzOjE0OiJyb290QGxvY2FsaG9zdCI7czo4OiJwYXNzd29yZCI7czo1OiJhZG1pbiI7czo1OiJsZXZlbCI7czoxOiIyIjtzOjc6ImNyZWF0ZWQiO3M6MTk6IjIwMDAtMDEtMDEgMDA6MDA6MDAiO3M6MzoiYmlvIjtzOjQwOiImbHQ7cCZndDtJIGFtIEFkbWluaXN0cmF0b3IhJmx0Oy9wJmd0Ow0KIjtzOjY6ImF2YXRhciI7czo0NjoiL3VwbG9hZHMvc2hyZWstZm9yZXZlci1hZnRlci1tb3ZpZS1pbWFnZS03LmpwZyI7fQ%3D%3D; PHPSESSID=c4ca4238a0b923820dcc509a6f75849b','Host'=>'tp10g13.robpress.ecs.soton.ac.uk','Referer'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin','Upgrade-Insecure-Requests'=>'1','User-Agent'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'tp10g13.robpress.ecs.soton.ac.uk','IP'=>'152.78.236.66','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'tp10g13.robpress.ecs.soton.ac.uk','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en,en-US','LOCALES'=>'./','LOGS'=>'./','ONERROR'=>'Error->error','PACKAGE'=>'Fat-Free Framework','PARAMS'=>array(0=>'/admin/comment','controller'=>'comment'),'PATH'=>'/admin/comment','PATTERN'=>'/admin/@controller','PLUGINS'=>'/home/tp10g13/lib/','PORT'=>'80','PREFIX'=>NULL,'QUIET'=>false,'RAW'=>false,'REALM'=>'http://tp10g13.robpress.ecs.soton.ac.uk/admin/comment','RESPONSE'=>'','ROOT'=>'/home/tp10g13','ROUTES'=>array('/api/' . "
+[30-Nov-2015 18:20:26 UTC] - index.php:37 Base->run()
+[30-Nov-2015 18:20:26 UTC] PHP Notice:  Undefined index: class in /home/tp10g13/view/Error/error.htm on line 17
+[30-Nov-2015 18:20:26 UTC] PHP Notice:  Undefined index: type in /home/tp10g13/view/Error/error.htm on line 17
+[30-Nov-2015 18:20:26 UTC] PHP Warning:  Unknown: open(/var/lib/php5/sess_c4ca4238a0b923820dcc509a6f75849b, O_RDWR) failed: Permission denied (13) in Unknown on line 0
+[30-Nov-2015 18:20:26 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/var/lib/php5) in Unknown on line 0
+[30-Nov-2015 18:20:31 UTC] 2
+[30-Nov-2015 18:20:33 UTC] 2
+[30-Nov-2015 18:20:34 UTC] 2
+[30-Nov-2015 18:20:41 UTC] 2
+[30-Nov-2015 18:20:41 UTC] 2
+[30-Nov-2015 18:20:42 UTC] 2
+[30-Nov-2015 18:20:52 UTC] 2
+[30-Nov-2015 18:20:52 UTC] <title>
+[30-Nov-2015 18:20:52 UTC] <summary>
+[30-Nov-2015 18:20:52 UTC] <p>&lt;content&gt;</p>
+
+[30-Nov-2015 18:20:53 UTC] 2
+[30-Nov-2015 18:22:08 UTC] HTTP 403 (POST /user/login)
+[30-Nov-2015 18:22:08 UTC] - helpers/authhelper.php:74 Session->__construct()
+[30-Nov-2015 18:22:08 UTC] - helpers/authhelper.php:45 AuthHelper->setupSession(array('id'=>'22','username'=>'a','displayname'=>'','email'=>'','password'=>'a','level'=>'1','created'=>'2015-11-27 16:59:57','bio'=>'','avatar'=>''))
+[30-Nov-2015 18:22:08 UTC] - controllers/user.php:64 AuthHelper->login('a','a')
+[30-Nov-2015 18:22:08 UTC] - lib/base.php:1305 Base->call('user->login',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'controllers/; models/; helpers/; utility/;','BASE'=>'','BITMASK'=>2,'BODY'=>'username=a&password=a&Login=Login','CACHE'=>'folder=tmp/cache/','CASELESS'=>true,'DEBUG'=>3,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>false,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Accept'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Encoding'=>'gzip, deflate','Accept-Language'=>'en-GB,en-US;q=0.8,en;q=0.6','Authorization'=>'','Cache-Control'=>'max-age=0','Connection'=>'keep-alive','Cookie'=>'_ga=GA1.4.369367664.1392348589; __utma=89017231.916278231.1391190066.1448480813.1448481746.13; __utmz=89017231.1448481746.13.5.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); myecs=tp10g13; _ga=GA1.3.1448861846.1448397257; PHPSESSID=c4ca4238a0b923820dcc509a6f75849b','Host'=>'tp10g13.robpress.ecs.soton.ac.uk','Origin'=>'http://tp10g13.robpress.ecs.soton.ac.uk','Referer'=>'http://tp10g13.robpress.ecs.soton.ac.uk/user/login?from=%2F','Upgrade-Insecure-Requests'=>'1','User-Agent'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'tp10g13.robpress.ecs.soton.ac.uk','IP'=>'152.78.236.66','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'tp10g13.robpress.ecs.soton.ac.uk','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en,en-US','LOCALES'=>'./','LOGS'=>'./','ONERROR'=>'Error->error','PACKAGE'=>'Fat-Free Framework','PARAMS'=>array(0=>'/user/login?from=/','controller'=>'user','action'=>'login'),'PATH'=>'/user/login','PATTERN'=>'/@controller/@action','PLUGINS'=>'/home/tp10g13/lib/','PORT'=>'80','PREFIX'=>NULL,'QUIET'=>false,'RAW'=>false,'REALM'=>'http://tp10g13.robpress.ecs.soton.ac.uk/user/login?from=%2F','RESPONSE'=>'','ROOT'=>'/home/tp10g13','ROUTES'=>array('/api/' . "
+[30-Nov-2015 18:22:08 UTC] - index.php:37 Base->run()
+[30-Nov-2015 18:22:36 UTC] HTTP 403 (POST /user/login)
+[30-Nov-2015 18:22:36 UTC] - helpers/authhelper.php:74 Session->__construct()
+[30-Nov-2015 18:22:36 UTC] - helpers/authhelper.php:45 AuthHelper->setupSession(array('id'=>'1','username'=>'admin','displayname'=>'Administrator','email'=>'root@localhost','password'=>'admin','level'=>'2','created'=>'2000-01-01 00:00:00','bio'=>'&lt;p&gt;I am Administrator!&lt;/p&gt;
+','avatar'=>'/uploads/shrek-forever-after-movie-image-7.jpg'))
+[30-Nov-2015 18:22:36 UTC] - controllers/user.php:64 AuthHelper->login('admin','admin')
+[30-Nov-2015 18:22:36 UTC] - lib/base.php:1305 Base->call('user->login',array(Base::__set_state(array('hive'=>array('AGENT'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36','AJAX'=>false,'ALIASES'=>array(),'AUTOLOAD'=>'controllers/; models/; helpers/; utility/;','BASE'=>'','BITMASK'=>2,'BODY'=>'username=admin&password=admin&Login=Login','CACHE'=>'folder=tmp/cache/','CASELESS'=>true,'DEBUG'=>3,'DIACRITICS'=>array(),'DNSBL'=>'','EMOJI'=>array(),'ENCODING'=>'UTF-8','ERROR'=>NULL,'ESCAPE'=>false,'EXEMPT'=>NULL,'FALLBACK'=>'en','HEADERS'=>array('Accept'=>'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Encoding'=>'gzip, deflate','Accept-Language'=>'en-GB,en-US;q=0.8,en;q=0.6','Authorization'=>'','Cache-Control'=>'max-age=0','Connection'=>'keep-alive','Cookie'=>'_ga=GA1.4.369367664.1392348589; __utma=89017231.916278231.1391190066.1448480813.1448481746.13; __utmz=89017231.1448481746.13.5.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); myecs=tp10g13; _ga=GA1.3.1448861846.1448397257; PHPSESSID=b6d767d2f8ed5d21a44b0e5886680cb9','Host'=>'tp10g13.robpress.ecs.soton.ac.uk','Origin'=>'http://tp10g13.robpress.ecs.soton.ac.uk','Referer'=>'http://tp10g13.robpress.ecs.soton.ac.uk/user/login?from=%2F','Upgrade-Insecure-Requests'=>'1','User-Agent'=>'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36'),'HALT'=>true,'HIGHLIGHT'=>true,'HOST'=>'tp10g13.robpress.ecs.soton.ac.uk','IP'=>'152.78.236.66','JAR'=>array('expire'=>0,'path'=>'/','domain'=>'tp10g13.robpress.ecs.soton.ac.uk','secure'=>false,'httponly'=>true),'LANGUAGE'=>'en-GB,en,en-US','LOCALES'=>'./','LOGS'=>'./','ONERROR'=>'Error->error','PACKAGE'=>'Fat-Free Framework','PARAMS'=>array(0=>'/user/login?from=/','controller'=>'user','action'=>'login'),'PATH'=>'/user/login','PATTERN'=>'/@controller/@action','PLUGINS'=>'/home/tp10g13/lib/','PORT'=>'80','PREFIX'=>NULL,'QUIET'=>false,'RAW'=>false,'REALM'=>'http://tp10g13.robpress.ecs.soton.ac.uk/user/login?from=%2F','RESPONSE'=>'','ROOT'=>'/home/tp10g13','ROUTES'=>array('/api/' . "
+[30-Nov-2015 18:22:36 UTC] - index.php:37 Base->run()
+[30-Nov-2015 18:26:36 UTC] <subject>
+[30-Nov-2015 18:28:53 UTC] subject: <subj>

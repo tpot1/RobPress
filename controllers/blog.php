@@ -11,12 +11,6 @@ class Blog extends Controller {
 		} else {
 			$posts = $this->Model->Posts->fetchPublished();
 		}
-		
-		foreach($posts as $post){		//this only fixed it on the home page
-			$post['title'] = htmlspecialchars($post['title']);
-			$post['summary'] = htmlspecialchars($post['summary']);
-			$post['content'] = htmlspecialchars($post['content']);
-		}
 
 		$blogs = $this->Model->map($posts,'user_id','Users');		
 		$blogs = $this->Model->map($posts,array('post_id','Post_Categories','category_id'),'Categories',false,$blogs);
@@ -76,10 +70,6 @@ class Blog extends Controller {
 			if(empty($this->request->data['subject'])) {
 				$comment->subject = 'RE: ' . $post->title;
 			}
-			else{
-				$comment->subject = htmlspecialchars($this->request->data['subject']);
-			}
-			$comment->message = htmlspecialchars($comment->message);
 
 			$comment->save();
 
