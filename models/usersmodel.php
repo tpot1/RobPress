@@ -30,7 +30,6 @@ class UsersModel extends GenericModel {
 		}
 		else return true;
 	}
-	
 }
 
 ?>
