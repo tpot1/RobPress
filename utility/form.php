@@ -11,28 +11,6 @@ class Form {
 		return '<form role="form" method="post" action="'.$action.'" '.$enctype.'>';	
 	}
 
-	public function captcha(){
-			
-		// Create a blank image and add some text
-		$im = imagecreatetruecolor(120, 40);
-		$grey = imagecolorallocate($im, 128, 128, 128);
-		imagefill($im, 0, 0, $grey);
-
-		$text_color = imagecolorallocate($im, 233, 14, 91);
-		$val= rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true);
-		imagestring($im, 5, 5, 5,  $val , $text_color);
-
-		// Save the image as 'simpletext.jpg'
-		imagejpeg($im, 'captcha.jpg',100);
-
-		// Free up memory
-		imagedestroy($im);
-
-
-		return '<p><img alt="" src="<?=$site[\"base\"]?>/uploads/rob1.jpg"/></p>
-		<br><input type="text" name="cap" placeholder="Type above Text"/>';
-	}
-
 	public function file($options) {
 		return '<input type="file" class="form-control" id="' . $options['field'] . '" name="' . $options['field'] . '" placeholder="' . $options['placeholder'] . '" value="' . $options['value'] . '">';
 	}
