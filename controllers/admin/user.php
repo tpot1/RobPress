@@ -1,14 +1,10 @@
 <?php
-
 namespace Admin;
-
 class User extends AdminController {
-
 	public function index($f3) {
 		$users = $this->Model->Users->fetchAll();
 		$f3->set('users',$users);
 	}
-
 	public function edit($f3) {	
 		$id = $f3->get('PARAMS.3');
 		if(empty($id)) {
@@ -21,7 +17,6 @@ class User extends AdminController {
 		if($this->request->is('post')) {
 			$u->copyfrom('POST');
 			$u->setPassword($this->request->data['password']);
-			//TODO***************************NEED TO ADD CODE FOR FILE UPLOAD HERE****************************
 			if($u->credentialCheck($u->username,$u->displayname,$u->password)){
 				$u->save();
 				\StatusMessage::add('User updated succesfully','success');
@@ -31,16 +26,13 @@ class User extends AdminController {
 		$_POST = $u->cast();
 		$f3->set('u',$u);
 	}
-
 	public function delete($f3) {
 		$id = $f3->get('PARAMS.3');
 		$u = $this->Model->Users->fetch($id);
-
 		if($id == $this->Auth->user('id')) {
 			\StatusMessage::add('You cannot remove yourself','danger');
 			return $f3->reroute('/admin/user');
 		}
-
 		//Remove all posts and comments
 		$posts = $this->Model->Posts->fetchAll(array('user_id' => $id));
 		foreach($posts as $post) {
@@ -55,12 +47,8 @@ class User extends AdminController {
 			$comment->erase();
 		}
 		$u->erase();
-
 		\StatusMessage::add('User has been removed','success');
 		return $f3->reroute('/admin/user');
 	}
-
-
 }
-
 ?>

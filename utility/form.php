@@ -15,6 +15,8 @@ class Form {
 			
 		// Create a blank image and add some text
 		$im = imagecreatetruecolor(120, 40);
+		$grey = imagecolorallocate($im, 128, 128, 128);
+		imagefill($im, 0, 0, $grey);
 
 		$text_color = imagecolorallocate($im, 233, 14, 91);
 		$val= rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true);
@@ -27,7 +29,7 @@ class Form {
 		imagedestroy($im);
 
 
-		return '<p><img alt="" src="<?=BASE?>uploads/captcha.jpg"/></p>
+		return '<p><img alt="" src="<?=$site[\"base\"]?>/uploads/rob1.jpg"/></p>
 		<br><input type="text" name="cap" placeholder="Type above Text"/>';
 	}
 

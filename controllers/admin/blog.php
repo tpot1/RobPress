@@ -34,9 +34,6 @@
 					\StatusMessage::add('Your post must have a title!','danger');
 				}
 				else{
-					error_log($title);
-					error_log($summary);
-					error_log($content);
 					$post->title = htmlspecialchars($title);		//escaping all the chars that could be used for XSS before storing the post in the database
 					$post->summary = htmlspecialchars($summary);
 					$post->content = $content;		//the content's special chars seem to have already been escaped

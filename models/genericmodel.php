@@ -68,7 +68,12 @@ class GenericModel extends \DB\SQL\Mapper {
 
 	/** Convert conditions array into SQL query */
 	protected function prepare($conditions) {
-		if(is_array($conditions) && !empty($conditions)) {
+		if(!is_array($conditions) && !empty($conditions)){
+			$conditions = (int) $conditions;
+			//var_dump($conditions);
+			//die();
+		}
+		else if(is_array($conditions) && !empty($conditions)) {
 			$result = array(0 => "");
 			foreach($conditions as $key=>$value) {
 				$join = "";
