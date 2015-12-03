@@ -45,9 +45,13 @@ class Page extends AdminController {
 
 	public function delete($f3) {
 		$pagename = $f3->get('PARAMS.3');
-		$this->Model->Pages->delete($pagename);	
-		\StatusMessage::add('Page deleted succesfully','success');
-		return $f3->reroute('/admin/page');	
+		if($this->request->is('post')) {
+			$this->Model->Pages->delete($pagename);	
+			\StatusMessage::add('Page deleted succesfully','success');
+			return $f3->reroute('/admin/page');	
+		}
+		$_POST = $pagename;
+		$f3->set('page',$pagename);
 	}
 
 }

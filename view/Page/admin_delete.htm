@@ -1,0 +1,15 @@
+<h2>Delete User</h2>
+
+<p>Are you sure you want to delete the page titled "<?=$page?>"?</p>
+
+<?php
+
+	$form = new Form();
+	echo $form->start();
+	echo $form->add('Delete',array('type' => 'submit', 'class' => 'btn-danger'));
+	echo $form->end();
+
+?>
+
+<p></p>
+<a class="btn btn-primary" href="<?=$site['base']?>/admin/page">Cancel</a>

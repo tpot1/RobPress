@@ -28,14 +28,18 @@
 		public function delete($f3) {
 			$categoryid = $f3->get('PARAMS.3');
 			$category = $this->Model->Categories->fetchById($categoryid);
-			$category->erase();
+			if($this->request->is('post')) {
+				$category->erase();
 
-			//Delete links		
-			$links = $this->Model->Post_Categories->fetchAll(array('category_id' => $categoryid));
-			foreach($links as $link) { $link->erase(); } 
-	
-			\StatusMessage::add('Category deleted succesfully','success');
-			return $f3->reroute('/admin/category');
+				//Delete links		
+				$links = $this->Model->Post_Categories->fetchAll(array('category_id' => $categoryid));
+				foreach($links as $link) { $link->erase(); } 
+		
+				\StatusMessage::add('Category deleted succesfully','success');
+				return $f3->reroute('/admin/category');
+			}
+			$_POST = $category->cast();
+			$f3->set('category',$category);
 		}
 
 		public function edit($f3) {
