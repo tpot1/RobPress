@@ -1,0 +1,19 @@
+<h2>Approve Comment</h2>
+
+<p>Are you sure you want to approve the following comment?"</p>
+<p>Subject: <?=$comment->subject?></p>
+<p>Message: <?=$comment->message?></p>
+
+<?php
+
+	$form = new Form();
+	echo $form->start();
+	echo $form->add('Allow',array('type' => 'submit', 'class' => 'btn-success'));
+	echo $form->end();
+
+?>
+
+<p></p>
+<a class="btn btn-primary" href="<?=$site['base']?>/blog/view/<?=$comment->blog_id?>">Cancel</a>
+
+

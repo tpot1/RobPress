@@ -71,6 +71,8 @@ class Blog extends Controller {
 				$comment->subject = 'RE: ' . $post->title;
 			}
 
+			$comment->subject = htmlspecialchars($comment->subject);
+
 			$comment->save();
 
 			//Redirect
@@ -83,22 +85,51 @@ class Blog extends Controller {
 		}
 	}
 
-	public function moderate($f3) {
-		list($id,$option) = explode("/",$f3->get('PARAMS.3'));
+	public function moderate_delete($f3) {
+		$id = $f3->get('PARAMS.3');
 		$comments = $this->Model->Comments;
 		$comment = $comments->fetch($id);
 
-		$post_id = $comment->blog_id;
-		//Approve
-		if ($option == 1) {
+		//check if user not an admin
+		if((int) $this->Auth->user('level') < 2){
+			$f3->reroute('/blog/view/' . $comment->blog_id);
+		}
+		else if($this->request->is('post')) {
+
+			$post_id = $comment->blog_id;
+
+			$comment->erase();
+
+			StatusMessage::add('The comment has been deleted');
+			$f3->reroute('/blog/view/' . $comment->blog_id);
+		}
+			
+		$_POST = $comment;
+		$f3->set('comment',$comment);
+	}
+
+	public function moderate_approve($f3) {
+		$id = $f3->get('PARAMS.3');
+		$comments = $this->Model->Comments;
+		$comment = $comments->fetch($id);
+
+		//check if user is not admin or poster of comment
+		if((int) $this->Auth->user('level') < 2 || $comment->user_id == (int) $this->Auth->user('id')){
+			$f3->reroute('/blog/view/' . $comment->blog_id);
+		}
+		else if($this->request->is('post')) {
+
+			$post_id = $comment->blog_id;
+
 			$comment->moderated = 1;
 			$comment->save();
-		} else {
-		//Deny
-			$comment->erase();
+
+			StatusMessage::add('The comment has been approved');
+			$f3->reroute('/blog/view/' . $comment->blog_id);
 		}
-		StatusMessage::add('The comment has been moderated');
-		$f3->reroute('/blog/view/' . $comment->blog_id);
+			
+		$_POST = $comment;
+		$f3->set('comment',$comment);
 	}
 
 	public function search($f3) {
