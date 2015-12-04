@@ -12,16 +12,6 @@ class Comment extends AdminController {
 
 		//Moderated comments
 		$mod = $this->Model->Comments->fetchAll(array('moderated' => 1));
-		/*$var = sizeof($mod);
-		foreach($mod as $comment){
-			$blog = $this->Model->Posts->fetch($comment['blog_id']);
-			$user = $this->Model->Users->fetch($comment['user_id']);
-    		if(!$blog||!$user){
-    			if(($key = array_search($comment, $mod)) !== false) {
-    				unset($mod[$key]);
-				}
-    		}
-		}*/			
 		$moderated = $this->Model->map($mod ,'user_id','Users');
 		$moderated = $this->Model->map($mod ,'blog_id','Posts',true,$moderated);
 

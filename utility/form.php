@@ -126,6 +126,34 @@ EOT;
 		return $result;
 	}	
 
+	public function captcha(){
+
+		$val=rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true);
+
+		//@session_start();
+		//$_SESSION['captcha']=$val;
+
+	
+		file_put_contents('captcha.txt', $val);
+
+
+
+		header('Content-Type: image/jpeg');
+		$im = imagecreatetruecolor(140, 40);
+		$background_colour = imagecolorallocate($im, 128, 128, 128);
+		imagefill($im, 0, 0, $background_colour);
+		$text_color = imagecolorallocate($im, 233, 14, 91);
+		imagestring($im, 5, 5, 5,  $val , $text_color);
+		
+		ob_start();
+		imagejpeg($im, NULL, 100);
+	    $rawImageBytes = ob_get_clean();
+	    $return = "<img src='data:image/jpeg;base64," . base64_encode( $rawImageBytes ) . "' />";
+		imagedestroy($im);
+
+		return $return;
+	}
+
 }
 
 ?>

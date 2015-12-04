@@ -87,9 +87,8 @@ class User extends Controller {
 	/* Handle after logging in */
 	private function afterLogin($f3) {
 				StatusMessage::add('Logged in succesfully','success');
-
 				//Redirect to where they came from
-				if(isset($_GET['from'])) {				//TODO**********************VULNERABILITY HERE********************
+				if(isset($_GET['from']) && substr($_GET['from'], 0, 1) == '/') {	//checks the reroute starts with a '/' so it can't link to pages out of the domain
 					$f3->reroute($_GET['from']);
 				} else {
 					$f3->reroute('/');	
@@ -109,7 +108,6 @@ class User extends Controller {
 		$u = $this->Model->Users->fetch($id);
 		if($this->request->is('post')) {
 			$u->copyfrom('POST');
-			$u->bio = htmlspecialchars($u->bio);
 			//Handle avatar upload
 			if(isset($_FILES['avatar']) && isset($_FILES['avatar']['tmp_name']) && !empty($_FILES['avatar']['tmp_name'])) {
 				$url = File::Upload($_FILES['avatar']);		

@@ -8,30 +8,10 @@
 	echo $form->start();
 	echo $form->add('username');
 	echo $form->add('password',array('type' => 'password','value' => ''));
-
-	$val=rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true);
-	file_put_contents('captcha.txt', $val);
-
-
-	header('Content-Type: image/jpeg');
-	$im = imagecreatetruecolor(140, 40);
-	$background_colour = imagecolorallocate($im, 128, 128, 128);
-	imagefill($im, 0, 0, $background_colour);
-	$text_color = imagecolorallocate($im, 233, 14, 91);
-	imagestring($im, 5, 5, 5,  $val , $text_color);
-	
-	ob_start();
-	imagejpeg($im, NULL, 100);
-    $rawImageBytes = ob_get_clean();
-    echo "<img src='data:image/jpeg;base64," . base64_encode( $rawImageBytes ) . "' />";
-	imagedestroy($im);
-
-	echo $form->add('Type the above text');
-
+	//echo $form->captcha();
+	//echo $form->add('Type the above text');
 	echo $form->add('Login',array('type' => 'submit'));
 	echo $form->end();
-
-
 ?>
 
 <p>Don't have an account yet? Why not <a href="<?=$site['base']?>/user/add">Register</a>

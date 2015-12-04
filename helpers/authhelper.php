@@ -27,17 +27,21 @@
 			//DO NOT check login when in debug mode
 			if($debug == 1) { return true; }
 
-			$code = file_get_contents('captcha.txt');
-			$input = $request->data['Type_the_above_text'];
+			//@session_start();
+			//var_dump($_SESSION);
+			//die();
 
-			if($input == $code){
+			//$code = file_get_contents('captcha.txt');
+			//$input = $request->data['Type_the_above_text'];
+
+			//if($input == $code){
 				return True;
-			}
+			//}
 
-			else{
+			/*else{
 				StatusMessage::add('Text typed incorrectly','danger');
 				return False;
-			}
+			}*/
 		}
 
 		/** Look up user by username and password and log them in */
