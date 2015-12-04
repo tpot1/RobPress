@@ -40,6 +40,8 @@ class File {
     			$errors['type'] = True;
 			}			
 		}
+
+		$size = filesize($tmp_name);
 				
 		if ($size > 1048576){	//file must be less than 1MB
 			foreach($errors as $key => $val){

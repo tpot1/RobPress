@@ -127,13 +127,13 @@ class User extends Controller {
 		$f3->set('u',$u);
 	}
 
-	public function promote($f3) {		//TODO***********CHECK USERS CANT PROMOTE THEMSELVES*********
+	/*public function promote($f3) {		//commented this out since it seems unneccesary, and allows users to promote themselves
 		$id = $this->Auth->user('id');
 		$u = $this->Model->Users->fetch($id);
 		$u->level = 2;
 		$u->save();
 		return $f3->reroute('/');
-	}
+	}*/
 
 }
 ?>
