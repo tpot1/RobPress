@@ -9,13 +9,15 @@
 	echo $form->add('username');
 	echo $form->add('password',array('type' => 'password','value' => ''));
 
+	$val=rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true);
+	file_put_contents('captcha.txt', $val);
+
+
 	header('Content-Type: image/jpeg');
 	$im = imagecreatetruecolor(140, 40);
 	$background_colour = imagecolorallocate($im, 128, 128, 128);
 	imagefill($im, 0, 0, $background_colour);
-
 	$text_color = imagecolorallocate($im, 233, 14, 91);
-	$val= rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true);
 	imagestring($im, 5, 5, 5,  $val , $text_color);
 	
 	ob_start();
@@ -24,10 +26,11 @@
     echo "<img src='data:image/jpeg;base64," . base64_encode( $rawImageBytes ) . "' />";
 	imagedestroy($im);
 
-	echo $form->add('Type above text');
+	echo $form->add('Type the above text');
 
 	echo $form->add('Login',array('type' => 'submit'));
 	echo $form->end();
+
 
 ?>
 

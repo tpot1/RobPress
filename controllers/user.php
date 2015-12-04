@@ -2,6 +2,7 @@
 class User extends Controller {
 
 	public function view($f3) {		
+
 		$userid = $f3->get('PARAMS.3');
 		if(empty($userid)) {
 			return $f3->reroute('/');
@@ -126,7 +127,7 @@ class User extends Controller {
 		$f3->set('u',$u);
 	}
 
-	public function promote($f3) {
+	public function promote($f3) {		//TODO***********CHECK USERS CANT PROMOTE THEMSELVES*********
 		$id = $this->Auth->user('id');
 		$u = $this->Model->Users->fetch($id);
 		$u->level = 2;

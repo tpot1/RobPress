@@ -27,12 +27,23 @@
 			//DO NOT check login when in debug mode
 			if($debug == 1) { return true; }
 
-			return true;	
+			$code = file_get_contents('captcha.txt');
+			$input = $request->data['Type_the_above_text'];
+
+			if($input == $code){
+				return True;
+			}
+
+			else{
+				StatusMessage::add('Text typed incorrectly','danger');
+				return False;
+			}
 		}
 
 		/** Look up user by username and password and log them in */
 		public function login($username,$password) {
-			$f3=Base::instance();						
+			$f3=Base::instance();		
+
 			$db = $this->controller->db;
             
             $query = 'SELECT * FROM users WHERE username= :username AND password= :password';
@@ -45,7 +56,6 @@
 				$this->setupSession($user);
 				return $this->forceLogin($user);
 			} 
-			return false;
 		}
 
 		/** Log user out of system */
