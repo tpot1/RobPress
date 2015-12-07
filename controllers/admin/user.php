@@ -15,24 +15,30 @@ class User extends AdminController {
 			return $f3->reroute('/admin/user');
 		}
 		if($this->request->is('post')) {
-			$u->copyfrom('POST');
-			$oldpass = $this->request->data['Old_Password'];
-			$newpass = $this->request->data['New_Password'];
-			if(password_verify($oldpass, $u['password'])){
-				$u->setPassword($newpass);
-				if($u->credentialCheck($u->username,$u->displayname,$newpass)){
+			$u->copyfrom('POST', function($arr){	//ensures parameters can't be added - they must match the given array of keys
+				return array_intersect_key($arr, array_flip(array('username','displayname','password','level','bio','avatar')));
+			});
+			$newpass = $this->request->data['pass_word'];
+			if($newpass == ""){
+				if($u->credentialCheck($u->username, $u->displayname)){
 					$u->save();
-					\StatusMessage::add('User updated succesfully','success');
+					\StatusMessage::add('Profile updated successfully','success');
 					return $f3->reroute('/admin/user');
-				}
+				}	
 			}
 			else{
-				\StatusMessage::add('Invalid old password','danger');
+				if($u->credentialCheck($u->username, $u->displayname, $newpass)){
+					$u->setPassword($u->password);
+					$u->save();
+					\StatusMessage::add('Profile updated successfully','success');
+					return $f3->reroute('/admin/user');
+				}
 			}
 		}			
 		$_POST = $u->cast();
 		$f3->set('u',$u);
 	}
+
 	public function delete($f3) {
 		$id = $f3->get('PARAMS.3');
 		$u = $this->Model->Users->fetch($id);
@@ -47,6 +53,10 @@ class User extends AdminController {
 				$post_categories = $this->Model->Post_Categories->fetchAll(array('post_id' => $post->id));
 				foreach($post_categories as $cat) {
 					$cat->erase();
+				}
+				$comments = $this->Model->Comments->fetchAll(array('blog_id' => $postid));
+				foreach($comments as $comment) {
+					$comment->erase();
 				}
 				$post->erase();
 			}

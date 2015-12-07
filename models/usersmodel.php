@@ -7,7 +7,7 @@ class UsersModel extends GenericModel {
 		$this->password = password_hash($password, PASSWORD_DEFAULT);
 	}	
 	
-	public function credentialCheck($username, $displayname, $password, $email="default"){
+	public function credentialCheck($username, $displayname, $password="default", $email="default"){
 		if($username != h($username)){
 			StatusMessage::add('Invalid characters in username', 'danger');
 			return false;

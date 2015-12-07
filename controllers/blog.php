@@ -55,7 +55,11 @@ class Blog extends Controller {
 		$post = $this->Model->Posts->fetch($id);
 		if($this->request->is('post')) {
 			$comment = $this->Model->Comments;
-			$comment->copyfrom('POST');
+			$comment->copyfrom('POST', function($arr){
+				$parameters = array_intersect_key($arr, array_flip(array('user_id','subject','message')));
+				$parameters['user_id']=$this->Auth->user('id');	//stops the user from changing their id to post as someone else
+				return $parameters;
+			});
 			$comment->blog_id = $id;
 			$comment->created = mydate();
 

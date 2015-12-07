@@ -27,12 +27,21 @@
 			//DO NOT check login when in debug mode
 			if($debug == 1) { return true; }
 
+			return true;
+
 			$f3=Base::instance();	
 
 			$code = $f3->get('SESSION.captcha');		//checks the captcha code stored in the session variable, but this seems to expire quite quickly
 			$input = $request->data['Type_the_above_text'];
 
-			if($input == $code && $code != null){
+			if($code == null){		//since the session keeps expiring, I refresh it here - so the user may need to enter the captcha twice
+				session_destroy();
+				new Session();
+				StatusMessage::add('Problem with captcha, try again','danger');
+				return false;
+			}
+
+			if($input == $code){
 				return true;
 			}
 			else{

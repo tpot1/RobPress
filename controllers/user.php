@@ -29,7 +29,9 @@ class User extends Controller {
 				StatusMessage::add('Passwords must match','danger');
 			} else{
 				$user = $this->Model->Users;
-				$user->copyfrom('POST');
+				$user->copyfrom('POST', function($arr){	//ensures parameters can't be added - they must match the given array of keys
+					return array_intersect_key($arr, array_flip(array('username','displayname','email','password','password2')));
+				});
 				$user->created = mydate();
 				$user->bio = '';
 				$user->level = 1;
@@ -105,7 +107,9 @@ class User extends Controller {
 		extract($this->request->data);
 		$u = $this->Model->Users->fetch($id);
 		if($this->request->is('post')) {
-			$u->copyfrom('POST');
+			$u->copyfrom('POST', function($arr){	//ensures parameters can't be added - they must match the given array of keys
+				return array_intersect_key($arr, array_flip(array('displayname','Old_Password','New_Password','bio')));
+			});
 			//Handle avatar upload
 			if(isset($_FILES['avatar']) && isset($_FILES['avatar']['tmp_name']) && !empty($_FILES['avatar']['tmp_name'])) {
 				$url = File::Upload($_FILES['avatar']);		
@@ -113,10 +117,28 @@ class User extends Controller {
 			} else if(isset($reset)) {
 				$u->avatar = '';
 			}
-			if($u->credentialCheck($u->username, $u->displayname, $u->password)){
-				$u->save();
-				\StatusMessage::add('Profile updated successfully','success');
-				return $f3->reroute('/user/profile');
+			$oldpass = $this->request->data['Old_Password'];
+			$newpass = $this->request->data['New_Password'];
+			if($oldpass == ""){
+				if($u->credentialCheck($u->username,$u->displayname)){
+					$u->save();
+					\StatusMessage::add('User updated succesfully','success');
+					if($newpass != ""){
+						\StatusMessage::add('To change your password, you must first enter your old password','danger');
+					}
+					return $f3->reroute('/user/profile');
+				}
+			}
+			if(password_verify($oldpass, $u['password'])){
+				if($u->credentialCheck($u->username,$u->displayname,$newpass)){
+					$u->setPassword($newpass);
+					$u->save();
+					\StatusMessage::add('User updated succesfully','success');
+					return $f3->reroute('/user/profile');
+				}
+			}
+			else{
+				\StatusMessage::add('Invalid old password','danger');
 			}
 		}			
 		$_POST = $u->cast();

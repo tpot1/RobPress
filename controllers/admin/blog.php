@@ -21,7 +21,13 @@
 				$cats = $this->Model->Post_Categories->fetchAll(array('post_id' => $postid));
 				foreach($cats as $cat) {
 					$cat->erase();
-				}	
+				}
+
+				//deletes all associated comments
+				$comments = $this->Model->Comments->fetchAll(array('blog_id' => $postid));
+				foreach($comments as $comment) {
+					$comment->erase();
+				}		
 
 				\StatusMessage::add('Post deleted succesfully','success');
 				return $f3->reroute('/admin/blog');
@@ -86,7 +92,9 @@
 			$blog = $this->Model->map($post,array('post_id','Post_Categories','category_id'),'Categories',false);
 			if ($this->request->is('post')) {
 				extract($this->request->data);
-				$post->copyfrom('POST');
+				$post->copyfrom('POST', function($arr){	//ensures parameters can't be added - they must match the given array of keys
+					return array_intersect_key($arr, array_flip(array('title','summary','content','published')));
+				});
 				$post->modified = mydate();
 				$post->user_id = $this->Auth->user('id');
 				

@@ -23,7 +23,9 @@ class Comment extends AdminController {
 		$id = $f3->get('PARAMS.3');
 		$comment = $this->Model->Comments->fetch($id);
 		if($this->request->is('post')) {
-			$comment->copyfrom('POST');
+			$comment->copyfrom('POST', function($arr){	//ensures parameters can't be added - they must match the given array of keys
+				return array_intersect_key($arr, array_flip(array('subject','message')));
+			});
 			$comment->subject = h($comment->subject);
 			$comment->save();
 			\StatusMessage::add('Comment updated succesfully','success');
