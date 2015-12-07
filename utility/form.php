@@ -130,12 +130,8 @@ EOT;
 
 		$val=rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true);
 
-
-
-		//session_destroy();
-		//session_start();
-
-		//$_SESSION['captcha']=$val;
+		$f3=Base::instance();	
+		$f3->set('SESSION.captcha',$val);
 
 		header('Content-Type: image/jpeg');
 		$im = imagecreatetruecolor(140, 40);

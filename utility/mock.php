@@ -31,7 +31,8 @@ class Mock {
 		$this->f3->set('PARAMS',$this->params);
 
 		//Restore original login
-		$auth = new AuthHelper(null);
+		$controller = new User();
+		$auth = new AuthHelper($controller);
 		$auth->forceLogin($this->f3->get('SESSION.user'));
 		$auth->setupSession($this->f3->get('SESSION.user'));
 

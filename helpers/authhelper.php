@@ -27,33 +27,23 @@
 			//DO NOT check login when in debug mode
 			if($debug == 1) { return true; }
 
-			/*$code = $_SESSION["captcha"];
+			$f3=Base::instance();	
+
+			$code = $f3->get('SESSION.captcha');		//checks the captcha code stored in the session variable, but this seems to expire quite quickly
 			$input = $request->data['Type_the_above_text'];
 
-			if($input == $code){
-				return True;
+			if($input == $code && $code != null){
+				return true;
 			}
-
 			else{
-				StatusMessage::add('Text typed incorrectly','danger');
-				return False;
-			}*/
-
-			return true;
+				StatusMessage::add('Captcha text typed incorrectly','danger');
+				return false;
+			}
 		}
 
 		/** Look up user by username and password and log them in */
 		public function login($username,$password) {
 			$f3=Base::instance();		
-
-/*			$user1 = $this->controller->Model->Users->fetchById(1);
-			$user2 = $this->controller->Model->Users->fetchById(2);
-
-			$user1['password'] = password_hash($user1['password'], PASSWORD_DEFAULT);
-			$user2['password'] = password_hash($user2['password'], PASSWORD_DEFAULT);
-
-			$user1->save();
-			$user2->save();*/
 
 			$db = $this->controller->db;
             
@@ -69,7 +59,7 @@
 					return $this->forceLogin($user);
 				}
 			}
-			 
+
 		}
 
 		/** Log user out of system */

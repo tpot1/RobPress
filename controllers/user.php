@@ -33,7 +33,6 @@ class User extends Controller {
 				$user->created = mydate();
 				$user->bio = '';
 				$user->level = 1;
-				//$user->setPassword($password);
 				if(empty($displayname)) {
 					$user->displayname = $user->username;
 				}
