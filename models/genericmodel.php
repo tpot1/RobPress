@@ -70,8 +70,6 @@ class GenericModel extends \DB\SQL\Mapper {
 	protected function prepare($conditions) {
 		if(!is_array($conditions) && !empty($conditions)){
 			$conditions = (int) $conditions;
-			//var_dump($conditions);
-			//die();
 		}
 		else if(is_array($conditions) && !empty($conditions)) {
 			$result = array(0 => "");

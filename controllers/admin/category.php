@@ -17,7 +17,7 @@
 		public function add($f3) {
 			if($this->request->is('post')) {
 				$category = $this->Model->Categories;
-				$category->title = htmlspecialchars($this->request->data['title']);
+				$category->title = h($this->request->data['title']);
 				$category->save();
 
 				\StatusMessage::add('Category added succesfully','success');
@@ -46,7 +46,7 @@
 			$categoryid = $f3->get('PARAMS.3');
 			$category = $this->Model->Categories->fetchById($categoryid);
 			if($this->request->is('post')) {
-				$category->title = htmlspecialchars($this->request->data['title']);
+				$category->title = h($this->request->data['title']);
 				$category->save();
 				\StatusMessage::add('Category updated succesfully','success');
 				return $f3->reroute('/admin/category');

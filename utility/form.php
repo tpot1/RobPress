@@ -130,13 +130,12 @@ EOT;
 
 		$val=rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true);
 
-		//@session_start();
+
+
+		//session_destroy();
+		//session_start();
+
 		//$_SESSION['captcha']=$val;
-
-	
-		file_put_contents('captcha.txt', $val);
-
-
 
 		header('Content-Type: image/jpeg');
 		$im = imagecreatetruecolor(140, 40);

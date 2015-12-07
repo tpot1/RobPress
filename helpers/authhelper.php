@@ -27,39 +27,49 @@
 			//DO NOT check login when in debug mode
 			if($debug == 1) { return true; }
 
-			//@session_start();
-			//var_dump($_SESSION);
-			//die();
+			/*$code = $_SESSION["captcha"];
+			$input = $request->data['Type_the_above_text'];
 
-			//$code = file_get_contents('captcha.txt');
-			//$input = $request->data['Type_the_above_text'];
-
-			//if($input == $code){
+			if($input == $code){
 				return True;
-			//}
+			}
 
-			/*else{
+			else{
 				StatusMessage::add('Text typed incorrectly','danger');
 				return False;
 			}*/
+
+			return true;
 		}
 
 		/** Look up user by username and password and log them in */
 		public function login($username,$password) {
 			$f3=Base::instance();		
 
+/*			$user1 = $this->controller->Model->Users->fetchById(1);
+			$user2 = $this->controller->Model->Users->fetchById(2);
+
+			$user1['password'] = password_hash($user1['password'], PASSWORD_DEFAULT);
+			$user2['password'] = password_hash($user2['password'], PASSWORD_DEFAULT);
+
+			$user1->save();
+			$user2->save();*/
+
 			$db = $this->controller->db;
             
-            $query = 'SELECT * FROM users WHERE username= :username AND password= :password';
-            $args = array(':username' => $username, ':password' => $password);
+            $query = 'SELECT * FROM users WHERE username= :username';
+            $args = array(':username' => $username);
             
             $results = $db->query($query, $args);
 
-			if (!empty($results)) {
-				$user = $results[0];	
-				$this->setupSession($user);
-				return $this->forceLogin($user);
-			} 
+			if (!empty($results)) {	//finds the user, and checks the password matches their hashed version in the database
+				if(password_verify($password, $results[0]['password'])){
+					$user = $results[0];	
+					$this->setupSession($user);
+					return $this->forceLogin($user);
+				}
+			}
+			 
 		}
 
 		/** Log user out of system */

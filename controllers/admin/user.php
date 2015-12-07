@@ -16,11 +16,18 @@ class User extends AdminController {
 		}
 		if($this->request->is('post')) {
 			$u->copyfrom('POST');
-			$u->setPassword($this->request->data['password']);
-			if($u->credentialCheck($u->username,$u->displayname,$u->password)){
-				$u->save();
-				\StatusMessage::add('User updated succesfully','success');
-				return $f3->reroute('/admin/user');
+			$oldpass = $this->request->data['Old_Password'];
+			$newpass = $this->request->data['New_Password'];
+			if(password_verify($oldpass, $u['password'])){
+				$u->setPassword($newpass);
+				if($u->credentialCheck($u->username,$u->displayname,$newpass)){
+					$u->save();
+					\StatusMessage::add('User updated succesfully','success');
+					return $f3->reroute('/admin/user');
+				}
+			}
+			else{
+				\StatusMessage::add('Invalid old password','danger');
 			}
 		}			
 		$_POST = $u->cast();

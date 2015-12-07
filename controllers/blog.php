@@ -71,7 +71,7 @@ class Blog extends Controller {
 				$comment->subject = 'RE: ' . $post->title;
 			}
 
-			$comment->subject = htmlspecialchars($comment->subject);
+			$comment->subject = h($comment->subject);
 
 			$comment->save();
 
@@ -147,7 +147,7 @@ class Blog extends Controller {
             
 			$ids = Hash::extract($ids,'{n}.id');
 			if(empty($ids)) {
-				StatusMessage::add('No search results found for ' . htmlspecialchars($search)); //used htmlspecialchars() to convert any special characters to strings in the input, preventing XSS
+				StatusMessage::add('No search results found for ' . h($search)); //used htmlspecialchars() to convert any special characters to strings in the input, preventing XSS
 				return $f3->reroute('/blog/search');
 			}
 

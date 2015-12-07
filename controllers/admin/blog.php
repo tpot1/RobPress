@@ -38,8 +38,8 @@
 					\StatusMessage::add('Your post must have a title!','danger');
 				}
 				else{
-					$post->title = htmlspecialchars($title);		//escaping all the chars that could be used for XSS before storing the post in the database
-					$post->summary = htmlspecialchars($summary);
+					$post->title = h($title);		//escaping all the chars that could be used for XSS before storing the post in the database
+					$post->summary = h($summary);
 					$post->content = $content;		//the content's special chars seem to have already been escaped
 					$post->user_id = $this->Auth->user('id');	
 					$post->created = $post->modified = mydate();
@@ -90,8 +90,8 @@
 				$post->modified = mydate();
 				$post->user_id = $this->Auth->user('id');
 				
-				$post->title = htmlspecialchars($title);		//doing the same again here
-				$post->summary = htmlspecialchars($summary);
+				$post->title = h($title);		//doing the same again here
+				$post->summary = h($summary);
 				$post->content = $content;
 				
 				//Determine whether to publish or draft

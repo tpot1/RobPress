@@ -2,7 +2,6 @@
 class User extends Controller {
 
 	public function view($f3) {		
-
 		$userid = $f3->get('PARAMS.3');
 		if(empty($userid)) {
 			return $f3->reroute('/');
@@ -34,7 +33,7 @@ class User extends Controller {
 				$user->created = mydate();
 				$user->bio = '';
 				$user->level = 1;
-				$user->setPassword($password);
+				//$user->setPassword($password);
 				if(empty($displayname)) {
 					$user->displayname = $user->username;
 				}

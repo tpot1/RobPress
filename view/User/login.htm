@@ -8,8 +8,8 @@
 	echo $form->start();
 	echo $form->add('username');
 	echo $form->add('password',array('type' => 'password','value' => ''));
-	//echo $form->captcha();
-	//echo $form->add('Type the above text');
+	echo $form->captcha();
+	echo $form->add('Type the above text');
 	echo $form->add('Login',array('type' => 'submit'));
 	echo $form->end();
 ?>

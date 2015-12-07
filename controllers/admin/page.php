@@ -12,7 +12,7 @@ class Page extends AdminController {
 	public function add($f3) {
 		if($this->request->is('post')) {
 			$pagename = strtolower(str_replace(" ","_",$this->request->data['title']));
-			if ($pagename != htmlspecialchars($pagename)){
+			if ($pagename != h($pagename)){
 				\StatusMessage::add('Invalid characters in page name','danger');
 				return $f3->reroute('/admin/page');
 			}

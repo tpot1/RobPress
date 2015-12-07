@@ -7,7 +7,9 @@
 	echo $form->start();
 	echo $form->add('username');
 	echo $form->add('displayname',array('label' => 'Display Name'));
-	echo $form->add('password',array('type' => 'password'));
+	echo '<h3>Change Password</h3>';
+	echo $form->add('Old Password',array('type' => 'password'));
+	echo $form->add('New Password',array('type' => 'password'));
 	echo $form->add('level',array('type' => 'select', 'items' => array(1 => 'Normal User', 2 => 'Administrator')));
 	echo $form->add('bio',array('type' => 'wysiwyg'));
 	echo $form->add('avatar');
