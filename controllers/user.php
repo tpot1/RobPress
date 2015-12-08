@@ -22,11 +22,14 @@ class User extends Controller {
 	public function add($f3) {
 		if($this->request->is('post')) {
 			extract($this->request->data);
+
 			$check = $this->Model->Users->fetch(array('username' => $username));
 			if (!empty($check)) {
 				StatusMessage::add('User already exists','danger');
 			} else if($password != $password2) {
 				StatusMessage::add('Passwords must match','danger');
+			} else if($Type_the_above_text != $f3->get('SESSION.captcha')){
+				StatusMessage::add('Invalid CAPTCHA code. Try again.','danger');
 			} else{
 				$user = $this->Model->Users;
 				$user->copyfrom('POST', function($arr){	//ensures parameters can't be added - they must match the given array of keys

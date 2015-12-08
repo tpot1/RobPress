@@ -12,7 +12,8 @@
 	echo '<hr/>';
 	echo $form->add('password',array('type' => 'password','value' => ''));
 	echo $form->add('password2',array('type' => 'password','value' => '', 'label' => 'Confirm Password'));
-	echo '<hr/>';
+	echo $form->captcha();
+	echo $form->add('Type the above text');
 	echo $form->add('Register',array('type' => 'submit'));
 	echo $form->end();
 ?>

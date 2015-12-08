@@ -38,16 +38,18 @@
 			$input = $request->data['Type_the_above_text'];
 
 			if($code == null){		//since the session keeps expiring, I add a special message for this - if this is displayed I need to restart the session manually
-				StatusMessage::add('Problem with captcha, try again','danger');
-				return false;
+				StatusMessage::add('Problem with CAPTCHA. Try again.','danger');
+				return $f3->reroute('/user/login');
+				//return false;
 			}
 
 			if($input == $code){
 				return true;
 			}
 			else{
-				StatusMessage::add('Captcha text typed incorrectly','danger');
-				return false;
+				StatusMessage::add('Invalid CAPTCHA code. Try again.','danger');
+				return $f3->reroute('/user/login');
+				//return false;
 			}
 		}
 
@@ -80,7 +82,7 @@
 			session_destroy();
 
 			//remove the user's session code from the database
-			$code = unserialize(base64_decode($f3->get('COOKIE.RobPress_User')));
+			$code = $f3->get('COOKIE.RobPress_User');
 			$user = $this->controller->Model->Users->fetch(array('code' => $code));
 			$user->code = "";
 			$user->save();
