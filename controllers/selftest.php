@@ -395,7 +395,7 @@ class Selftest extends Controller {
 	//Uploading a file
 	public function test_8() {
 		$fail = 0;
-		$files = array('tmp_name' => getcwd () . '/uploads/rob1.jpg', 'name' => 'test.jpg');
+		$files = array('tmp_name' => getcwd () . '/uploads/rob1.jpg', 'name' => 'test.jpg', 'size' => filesize(getcwd() . '/uploads/rob1.jpg'), 'error' => 0, 'type' => 'image/jpeg');
 
 		if(!file_exists(getcwd() . '/uploads/rob1.jpg')) {
 			$fail = 1;

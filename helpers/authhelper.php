@@ -16,7 +16,10 @@
 
 			//Log user back in from cookie
 			if($f3->exists('COOKIE.RobPress_User')) {
-				$user = unserialize(base64_decode($f3->get('COOKIE.RobPress_User')));
+				$code = $f3->get('COOKIE.RobPress_User');
+
+				$user = $this->controller->Model->Users->fetch(array('code' => $code));
+
 				$this->forceLogin($user);
 			}
 		}		
@@ -27,16 +30,14 @@
 			//DO NOT check login when in debug mode
 			if($debug == 1) { return true; }
 
-			return true;
+			//return true;
 
 			$f3=Base::instance();	
 
 			$code = $f3->get('SESSION.captcha');		//checks the captcha code stored in the session variable, but this seems to expire quite quickly
 			$input = $request->data['Type_the_above_text'];
 
-			if($code == null){		//since the session keeps expiring, I refresh it here - so the user may need to enter the captcha twice
-				session_destroy();
-				new Session();
+			if($code == null){		//since the session keeps expiring, I add a special message for this - if this is displayed I need to restart the session manually
 				StatusMessage::add('Problem with captcha, try again','danger');
 				return false;
 			}
@@ -78,6 +79,12 @@
 			//Kill the session
 			session_destroy();
 
+			//remove the user's session code from the database
+			$code = unserialize(base64_decode($f3->get('COOKIE.RobPress_User')));
+			$user = $this->controller->Model->Users->fetch(array('code' => $code));
+			$user->code = "";
+			$user->save();
+
 			//Kill the cookie
 			setcookie('RobPress_User','',time()-3600,'/');
 		}
@@ -91,7 +98,23 @@
 			session_id(md5($user['id']));
 
 			//Setup cookie for storing user details and for relogging in
-			setcookie('RobPress_User',base64_encode(serialize($user)),time()+3600*24*30,'/');
+			$uniq = uniqid();	//the code is comprised of a unique code, ensuring no duplicates
+			$chars = str_split('abcdefghijklmnopqrstuvwxyz'		
+                 .'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+                 .'0123456789!@#$%^&*()');			
+
+			$rand = array_rand($chars, 20);		//also comprised of a random string of characters, since the unique part can be easily worked out
+			$code = $uniq;
+			foreach ($rand as $key) {
+				$code = $code . $chars[$key];
+			}
+
+			$u = $this->controller->Model->Users->fetch(array('id' => $user['id']));
+			$u->code = $code;
+			$u->save();
+
+			//setcookie('RobPress_User',base64_encode(serialize($user)),time()+3600*24*30,'/');
+			setcookie('RobPress_User',$code,time()+3600*24*30,'/');
 
 			//And begin!
 			new Session();
