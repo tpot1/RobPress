@@ -27,7 +27,7 @@ class User extends Controller {
 				StatusMessage::add('User already exists','danger');
 			} else if($password != $password2) {
 				StatusMessage::add('Passwords must match','danger');
-			} else if(DEBUG != '1' && $Type_the_above_text != $f3->get('SESSION.captcha')){
+			} else if($this->Model->Settings->getSetting('debug') != '1' && $Type_the_above_text != $f3->get('SESSION.captcha')){
 				StatusMessage::add('Invalid CAPTCHA code. Try again.','danger');
 			} else{
 				$user = $this->Model->Users;
