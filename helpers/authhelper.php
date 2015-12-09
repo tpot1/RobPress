@@ -30,8 +30,6 @@
 			//DO NOT check login when in debug mode
 			if($debug == 1) { return true; }
 
-			//return true;
-
 			$f3=Base::instance();	
 
 			$code = $f3->get('SESSION.captcha');		//checks the captcha code stored in the session variable, but this seems to expire quite quickly
@@ -82,11 +80,13 @@
 			session_destroy();
 
 			//remove the user's session code from the database
-			$code = $f3->get('COOKIE.RobPress_User');
-			$user = $this->controller->Model->Users->fetch(array('code' => $code));
-			$user->code = "";
-			$user->save();
-
+			if(DEBUG != '1'){
+				$code = $f3->get('COOKIE.RobPress_User');
+				$user = $this->controller->Model->Users->fetch(array('code' => $code));
+				$user->code = "";
+				$user->save();
+			}
+			
 			//Kill the cookie
 			setcookie('RobPress_User','',time()-3600,'/');
 		}

@@ -22,13 +22,12 @@ class User extends Controller {
 	public function add($f3) {
 		if($this->request->is('post')) {
 			extract($this->request->data);
-
 			$check = $this->Model->Users->fetch(array('username' => $username));
 			if (!empty($check)) {
 				StatusMessage::add('User already exists','danger');
 			} else if($password != $password2) {
 				StatusMessage::add('Passwords must match','danger');
-			} else if($Type_the_above_text != $f3->get('SESSION.captcha')){
+			} else if(DEBUG != '1' && $Type_the_above_text != $f3->get('SESSION.captcha')){
 				StatusMessage::add('Invalid CAPTCHA code. Try again.','danger');
 			} else{
 				$user = $this->Model->Users;
@@ -109,6 +108,7 @@ class User extends Controller {
 		$id = $this->Auth->user('id');
 		extract($this->request->data);
 		$u = $this->Model->Users->fetch($id);
+		$oldpass = $u->password;
 		if(empty($u)){
 			return $f3->reroute('/');
 		}

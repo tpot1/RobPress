@@ -10,6 +10,7 @@
 	$form = new Form();
 	echo $form->start(array('type' => 'file'));
 	echo $form->add('displayname',array('label' => 'Display Name'));
+	echo $form->add('password',array('type' => 'password', 'label' => 'Change Password','value' => ''));
 	echo '<h3>Change Password</h3>';
 	echo $form->add('Old Password',array('type' => 'password'));
 	echo $form->add('New Password',array('type' => 'password'));

@@ -34,7 +34,7 @@ class Controller {
 		$this->Auth->resume();
 
 		//Load settings
-		$settings = $this->Model->Settings->fetchList(array('setting','value'));
+		$settings = Settings::getSettings();
 		$settings['base'] = $f3->get('BASE');
 		
 		//Append debug mode to title
@@ -44,7 +44,7 @@ class Controller {
 		$this->Settings = $settings;
 		$f3->set('site',$settings);
 
-				//Extract request data
+		//Extract request data
 		extract($this->request->data);
 
 		//Process before route code

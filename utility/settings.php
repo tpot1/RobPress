@@ -2,10 +2,12 @@
 
 class Settings {
 
-	public function __construct() {
+	/** Get all the settings */
+	public static function getSettings() {		
+		$model = new SettingsModel('Settings',new Database());
+		$settings = $model->fetchList(array('setting','value'));
+		return $settings;
 	}
-
-
 
 }
 

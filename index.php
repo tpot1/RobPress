@@ -1,9 +1,5 @@
 <?php
 
-//Set up logging
-ini_set("log_errors", 1);
-ini_set("error_log", "error.log");
-
 //Load framework
 $f3=require('lib/base.php');
 $f3->config('config/config.cfg');
@@ -13,6 +9,7 @@ $f3->set('AUTOLOAD','controllers/; models/; helpers/; utility/;');
 $f3->config('config/db.cfg');
 
 //Load global functions
+include_once("bootstrap.php");
 include_once("functions.php");
 
 //Define homepage 
