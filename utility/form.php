@@ -8,7 +8,13 @@ class Form {
 	public function start($options=array()) {
 		$action = isset($options['action']) ? $options['action'] : '';
 		$enctype = (isset($options['type']) && $options['type'] == 'file') ? 'enctype="multipart/form-data"' : ''; //Handle file uploads
-		return '<form role="form" method="post" action="'.$action.'" '.$enctype.'>';	
+		
+		$token = randomCode(10);
+		$f3=Base::instance();	
+		$f3->set('SESSION.token',$token);
+
+		return '<form role="form" method="post" action="'.$action.'" '.$enctype.'>
+				<input type="hidden" " name="token" value="' . $token . '">';	
 	}
 
 	public function file($options) {
@@ -128,22 +134,22 @@ EOT;
 
 	public function captcha(){
 
-		$val=rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true);
+		$val=rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true).rand(9,true);	//creates the captcha code
 
 		$f3=Base::instance();	
-		$f3->set('SESSION.captcha',$val);
+		$f3->set('SESSION.captcha',$val);	//stores the code in the session variable
 
 		header('Content-Type: image/jpeg');
-		$im = imagecreatetruecolor(140, 40);
+		$im = imagecreatetruecolor(140, 40);	//creates an image
 		$background_colour = imagecolorallocate($im, 128, 128, 128);
 		imagefill($im, 0, 0, $background_colour);
 		$text_color = imagecolorallocate($im, 233, 14, 91);
-		imagestring($im, 5, 5, 5,  $val , $text_color);
+		imagestring($im, 5, 5, 5,  $val , $text_color);	//adds the code as text to the image
 		
 		ob_start();
 		imagejpeg($im, NULL, 100);
 	    $rawImageBytes = ob_get_clean();
-	    $return = "<img src='data:image/jpeg;base64," . base64_encode( $rawImageBytes ) . "' />";
+	    $return = "<img src='data:image/jpeg;base64," . base64_encode( $rawImageBytes ) . "' />";	//returns the image to be displayed on the page
 		imagedestroy($im);
 
 		return $return;

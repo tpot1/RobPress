@@ -1,5 +1,9 @@
 <?php
 
+//Set up session
+session_save_path(getcwd() . DIRECTORY_SEPARATOR . 'tmp');
+
+//Setup session save path
 /*
 	Copyright (c) 2009-2014 F3::Factory/Bong Cosca, All rights reserved.
 

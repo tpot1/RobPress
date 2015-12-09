@@ -109,7 +109,10 @@ class User extends Controller {
 		$id = $this->Auth->user('id');
 		extract($this->request->data);
 		$u = $this->Model->Users->fetch($id);
-		if($this->request->is('post')) {
+		if(empty($u)){
+			return $f3->reroute('/');
+		}
+		else if($this->request->is('post')) {
 			$u->copyfrom('POST', function($arr){	//ensures parameters can't be added - they must match the given array of keys
 				return array_intersect_key($arr, array_flip(array('displayname','Old_Password','New_Password','bio')));
 			});

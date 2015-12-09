@@ -58,6 +58,9 @@ class GenericModel extends \DB\SQL\Mapper {
 	public function fetch($conditions = array(),$options=array()) {
 		if(is_numeric($conditions)) { $conditions = array('id' => $conditions); }
 		$conditions = $this->prepare($conditions);
+		if(empty($conditions)){
+			return null;
+		}
 		return $this->load($conditions,$options);
 	}
 
@@ -68,7 +71,10 @@ class GenericModel extends \DB\SQL\Mapper {
 
 	/** Convert conditions array into SQL query */
 	protected function prepare($conditions) {
-		if(!is_array($conditions) && !empty($conditions)){
+		if(empty($conditions)){
+			return null;
+		}
+		else if(!is_array($conditions)){
 			$conditions = (int) $conditions;
 		}
 		else if(is_array($conditions) && !empty($conditions)) {

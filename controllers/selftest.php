@@ -110,7 +110,7 @@ class Selftest extends Controller {
 		}
 		
 		//Set up test user if doesnt exist
-		$data = ['username' => $this->testUsername, 'password' => $this->testPassword, 'password2' => $this->testPassword, 'email' => $this->testUsername . '@example.org'];
+		$data = ['username' => $this->testUsername, 'displayname' => $this->testUsername, 'password' => $this->testPassword, 'password2' => $this->testPassword, 'email' => $this->testUsername . '@example.org'];
 		$output = $this->mock->run('User/add',$data);
 		if(!preg_match("!Registration complete!",$output)) {
 			die('Unable to create testing user. Please ensure your registration process is working correctly in debug mode.');
@@ -175,7 +175,7 @@ class Selftest extends Controller {
 
 	//Create account
 	private function test_1() {
-		$data = ['username' => $this->testUsername2, 'password' => $this->testPassword, 'password2' => $this->testPassword, 'email' => $this->testUsername2 . '@example.org'];
+		$data = ['username' => $this->testUsername2, 'displayname' => $this->testUsername2, 'password' => $this->testPassword, 'password2' => $this->testPassword, 'email' => $this->testUsername2 . '@example.org'];
 		$output = $this->mock->run('User/add',$data);
 
 		$fail = 0;
@@ -208,7 +208,7 @@ class Selftest extends Controller {
 		}
 
 		//Create test user 
-		$data = ['username' => $this->testUsername2, 'password' => $this->testPassword, 'password2' => $this->testPassword , 'email' => $this->testUsername2 . '@example.org'];
+		$data = ['username' => $this->testUsername2, 'displayname' => $this->testUsername2, 'password' => $this->testPassword, 'password2' => $this->testPassword , 'email' => $this->testUsername2 . '@example.org'];
 		$output = $this->mock->run('User/add',$data);
 		$check = $this->Model->Users->fetch(array('username' => $this->testUsername2));
 		if(empty($check)) {

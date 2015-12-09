@@ -35,15 +35,15 @@
 			$f3=Base::instance();	
 
 			$code = $f3->get('SESSION.captcha');		//checks the captcha code stored in the session variable, but this seems to expire quite quickly
-			$input = $request->data['Type_the_above_text'];
+			$input = $request->data['Type_the_above_text'];	//gets the users input 
 
 			if($code == null){		//since the session keeps expiring, I add a special message for this - if this is displayed I need to restart the session manually
 				StatusMessage::add('Problem with CAPTCHA. Try again.','danger');
-				return $f3->reroute('/user/login');
-				//return false;
+				//return $f3->reroute('/user/login');
+				return false;
 			}
 
-			if($input == $code){
+			if($input == $code){	//checks the users input is the same as the captcha code
 				return true;
 			}
 			else{
@@ -100,19 +100,10 @@
 			session_id(md5($user['id']));
 
 			//Setup cookie for storing user details and for relogging in
-			$uniq = uniqid();	//the code is comprised of a unique code, ensuring no duplicates
-			$chars = str_split('abcdefghijklmnopqrstuvwxyz'		
-                 .'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-                 .'0123456789!@#$%^&*()');			
-
-			$rand = array_rand($chars, 20);		//also comprised of a random string of characters, since the unique part can be easily worked out
-			$code = $uniq;
-			foreach ($rand as $key) {
-				$code = $code . $chars[$key];
-			}
+			$code = randomCode(10);	//generates a random code
 
 			$u = $this->controller->Model->Users->fetch(array('id' => $user['id']));
-			$u->code = $code;
+			$u->code = $code;	//stores the code in the database for the user
 			$u->save();
 
 			//setcookie('RobPress_User',base64_encode(serialize($user)),time()+3600*24*30,'/');

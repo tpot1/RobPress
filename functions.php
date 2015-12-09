@@ -19,6 +19,20 @@ function h($text) {
 	return htmlspecialchars($text);
 }
 
+function randomCode($length){
+
+	$chars = str_split('abcdefghijklmnopqrstuvwxyz'		
+                 .'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+                 .'0123456789!@#$%^&*()');			
+
+	$rand = array_rand($chars, $length);		//also comprised of a random string of characters, since the unique part can be easily worked out
+	$code = "";
+	foreach ($rand as $key) {
+		$code = $code . $chars[$key];
+	}
+	return uniqid($code, true);
+}
+
 /** Declare constants */
 if (isset($_SERVER['BASE'])) { define('BASE',$_SERVER['BASE']); } else { define('BASE','/'); }
 
