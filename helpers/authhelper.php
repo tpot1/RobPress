@@ -35,26 +35,22 @@
 			$db = $this->controller->db;
 			$query = 'SELECT * FROM login_attempts WHERE ip= :ip';
             $args = array(':ip' => $_SERVER['REMOTE_ADDR']);
-            $ip_attempts = $db->query($query, $args);
-        	if(!empty($ip_attempts) && $ip_attempts[0]['expiresat'] > strtotime('now')){
-        		StatusMessage::add('Your have been blocked due to too many unsuccessful login attempts. Try again in 1 hour.','danger');
+            $ip_attempts = $db->query($query, $args);	//gets the ip_attempts entry for this ip address, showing the number of attempts, and whether the ip is blocked
+        	if(!empty($ip_attempts) && $ip_attempts[0]['expiresat'] > strtotime('now')){	//checks if the user's ip has been blocked
+        		$timeleft = (int) (($ip_attempts[0]['expiresat'] - strtotime('now'))/60);	//checks how much longer they are blocked for
+        		StatusMessage::add('Your have been blocked due to too many unsuccessful login attempts. Try again in ' . $timeleft . ' minutes','danger');
         		return $f3->reroute('/user/login');
         	}	
 
-			$code = $f3->get('SESSION.captcha');		//checks the captcha code stored in the session variable, but this seems to expire quite quickly
+			$code = $f3->get('SESSION.captcha');		//gets the captcha code stored in the session variable
 			$input = $request->data['Type_the_above_text'];	//gets the users input 
-
-			if($code == null){		//since the session keeps expiring, I add a special message for this - if this is displayed I need to restart the session manually
-				StatusMessage::add('Problem with CAPTCHA. Try again.','danger');
-				return $f3->reroute('/user/login');
-			}
 
 			if($input == $code){	//checks the users input is the same as the captcha code
 				return true;
 			}
 			else{
 				StatusMessage::add('Invalid CAPTCHA code. Try again.','danger');
-				return $f3->reroute('/user/login');
+				return $f3->reroute('/user/login');		//reroutes them to the same page to avoid printing the 'invalid username or password' message
 			}
 		}
 
@@ -69,35 +65,42 @@
             
             $results = $db->query($query, $args);
 
+            $validCredentials = true;
+
 			if (!empty($results)) {	//finds the user, and checks the password matches their hashed version in the database
 				if(password_verify($password, $results[0]['password'])){
 					$user = $results[0];	
 					$this->setupSession($user);
 					return $this->forceLogin($user);
 				}
+				else $validCredentials = false;
+			}
+			else $validCredentials = false;
+
+			if(!$validCredentials){
+				$check = 'SELECT * FROM login_attempts WHERE ip= :ip';
+	            $args = array(':ip' => $_SERVER['REMOTE_ADDR']);
+	            $results = $db->query($check, $args);
+				if(empty($results)){
+					$addIP = 'INSERT INTO login_attempts (ip, attempts, expiresat) VALUES (:ip, 1, NULL)';
+					$ipargs = array(':ip' => $_SERVER['REMOTE_ADDR']);
+					$db->query($addIP, $ipargs);
+					StatusMessage::add("4 attempt(s) remaining.",'danger');
+				}
 				else{
-					$check = 'SELECT * FROM login_attempts WHERE ip= :ip';
-		            $args = array(':ip' => $_SERVER['REMOTE_ADDR']);
-		            $results = $db->query($check, $args);
-					if(empty($results)){
-						$addIP = 'INSERT INTO login_attempts (ip, attempts, expiresat) VALUES (:ip, 1, NULL)';
-						$ipargs = array(':ip' => $_SERVER['REMOTE_ADDR']);
-						$db->query($addIP, $ipargs);
+					$attempts = ((int) $results[0]['attempts']) + 1;
+					$expires = null;
+					if($attempts > 4){
+						$expires = strtotime('+1 hour');
+						$attempts = 0;
+						StatusMessage::add('You have been blocked due to too many unsuccessful login attempts. You can try again in 1 hour','danger');
 					}
 					else{
-						$attempts = ((int) $results[0]['attempts']) + 1;
-						$expires = null;
-						if($attempts == 4){
-							$expires = strtotime('+1 hour');
-							$attempts = 0;
-						}
-						else{
-							StatusMessage::add((5-$attempts) . " attempt(s) remaining.",'danger');
-						}
-						$updateIP = 'UPDATE login_attempts SET attempts = :attempts, expiresat = :expires WHERE ip = :ip';
-						$updateArgs = array(':attempts' => $attempts, ':expires'=> $expires, ':ip' => $_SERVER['REMOTE_ADDR']);
-						$db->query($updateIP, $updateArgs);
+						StatusMessage::add((5-$attempts) . " attempt(s) remaining.",'danger');
 					}
+					$updateIP = 'UPDATE login_attempts SET attempts = :attempts, expiresat = :expires WHERE ip = :ip';
+					$updateArgs = array(':attempts' => $attempts, ':expires'=> $expires, ':ip' => $_SERVER['REMOTE_ADDR']);
+					$db->query($updateIP, $updateArgs);
 				}
 			}
 		}

@@ -6,10 +6,7 @@
 
 	$form = new Form();
 	echo $form->start();
-	echo $form->add('Delete',array('type' => 'submit', 'class' => 'btn-danger'));
+	echo $form->confirm('Delete', 'Cancel', $site['base'].'/admin/user');
 	echo $form->end();
 
 ?>
-
-<p></p>
-<a class="btn btn-primary" href="<?=$site['base']?>/admin/user">Cancel</a>

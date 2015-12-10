@@ -8,12 +8,9 @@
 
 	$form = new Form();
 	echo $form->start();
-	echo $form->add('Allow',array('type' => 'submit', 'class' => 'btn-success'));
+	echo $form->confirm('Approve', 'Cancel', $site['base'].'/blog/view/'.$comment->blog_id, 'btn-success');
 	echo $form->end();
 
 ?>
-
-<p></p>
-<a class="btn btn-primary" href="<?=$site['base']?>/blog/view/<?=$comment->blog_id?>">Cancel</a>
 
 

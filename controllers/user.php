@@ -98,9 +98,11 @@ class User extends Controller {
 	}
 
 	public function logout($f3) {
-		$this->Auth->logout();
-		StatusMessage::add('Logged out succesfully','success');
-		$f3->reroute('/');	
+		if($this->request->is('post')) {
+			$this->Auth->logout();
+			StatusMessage::add('Logged out succesfully','success');
+			$f3->reroute('/');	
+		}
 	}
 
 
@@ -108,7 +110,7 @@ class User extends Controller {
 		$id = $this->Auth->user('id');
 		extract($this->request->data);
 		$u = $this->Model->Users->fetch($id);
-		$oldpass = $u->password;
+		//$oldpass = $u->password;
 		if(empty($u)){
 			return $f3->reroute('/');
 		}

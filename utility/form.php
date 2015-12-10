@@ -141,9 +141,21 @@ EOT;
 
 		header('Content-Type: image/jpeg');
 		$im = imagecreatetruecolor(140, 40);	//creates an image
-		$background_colour = imagecolorallocate($im, 128, 128, 128);
+		$background_colour = imagecolorallocate($im, 150, 150, 170);
 		imagefill($im, 0, 0, $background_colour);
-		$text_color = imagecolorallocate($im, 233, 14, 91);
+		$line_colour = imagecolorallocate($im, 5, 19, 175);
+		for ($i = 0; $i < 10; $i++) {		//draws random lines to obscure the image, making it harder for computers to read the numbers
+		    imageline(
+		        $im,
+		        rand(1, 200),
+		        rand(1, 200),
+		        rand(1, 50),
+		        rand(1, 50),
+		        $line_colour
+		    );
+		}
+
+		$text_color = imagecolorallocate($im, 175, 19, 10);
 		imagestring($im, 5, 5, 5,  $val , $text_color);	//adds the code as text to the image
 		
 		ob_start();
@@ -153,6 +165,11 @@ EOT;
 		imagedestroy($im);
 
 		return $return;
+	}
+
+	public function confirm($confirmName, $cancelName, $cancelLink, $confirmType = 'btn-danger', $cancelType = 'btn-primary'){
+		return '<input type="submit" value="' . $confirmName . '" ' . ' class="btn '.$confirmType .'">
+				<a class="btn ' . $cancelType . '" href="' . $cancelLink . '">' . $cancelName . '</a>';
 	}
 
 }

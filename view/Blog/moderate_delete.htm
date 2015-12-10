@@ -8,12 +8,9 @@
 
 	$form = new Form();
 	echo $form->start();
-	echo $form->add('Delete',array('type' => 'submit', 'class' => 'btn-danger'));
+	echo $form->confirm('Delete', 'Cancel', $site['base'].'/blog/view/'.$comment->blog_id);
 	echo $form->end();
 
 ?>
-
-<p></p>
-<a class="btn btn-primary" href="<?=$site['base']?>/blog/view/<?=$comment->blog_id?>">Cancel</a>
 
 

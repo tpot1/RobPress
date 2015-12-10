@@ -1,0 +1,14 @@
+<h2>Log Out</h2>
+
+<p>Are you sure you want to log out?</p>
+
+<?php
+
+	$form = new Form();
+	echo $form->start();
+	echo $form->confirm('Log Out', 'Cancel', $site['base'].'/');
+	echo $form->end();
+
+?>
+
+

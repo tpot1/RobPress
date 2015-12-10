@@ -2,6 +2,10 @@
 
 <div class="alert alert-danger"><strong>Error</strong>: <?= $ERROR['text'] ?></div>
 
+<?php //only show stack trace in debug mode
+if(defined('DEBUG')): 
+?>
+
 <hr/>
 
 <h4>Stack Trace</h4>
@@ -34,3 +38,5 @@ $(document).ready(function() {
 	});
 });
 </script>
+
+<?php endif; ?>

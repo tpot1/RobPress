@@ -36,13 +36,28 @@ class PagesModel {
 
 	/** Load the contents of a page */
 	public function fetch($pagename) {
-		$pagedir = getcwd() . "/pages/";
-		$file = $pagedir . $pagename;
-		if(!file_exists($file)) {
-			$file .= ".html";
+		$f3 = Base::instance();
+
+		//gets all pages in page directory
+		$pages = array_values($this->fetchAll());
+
+		//removes file extension for each page
+		foreach($pages as $key=>$page){
+			$pages[$key] = preg_replace('/\\.[^.\\s]{3,4}$/', '', $page);
 		}
-		if(!file_exists($file)) { return false; }
-		return file_get_contents($file);
+
+		//checks only pages in the directory are shown, else shows 404 error
+		if(in_array($pagename, $pages)){
+			$pagedir = getcwd() . "/pages/";
+			$file = $pagedir . $pagename;
+			if(!file_exists($file)) {
+				$file .= ".html";
+			}
+			if(!file_exists($file)) { return false; }
+			return file_get_contents($file);
+		}
+		else return $f3->error(404);
+		
 	}
 
 	/** Save contents of the page based on title and content field to file */
